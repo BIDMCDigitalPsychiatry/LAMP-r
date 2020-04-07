@@ -1,18 +1,16 @@
-# ActivitySpecApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.ActivitySpec
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActivitySpecAll**](ActivitySpecApi.md#ActivitySpecAll) | **GET** /activity_spec | Get all ActivitySpecs registered.
-[**ActivitySpecCreate**](ActivitySpecApi.md#ActivitySpecCreate) | **POST** /activity_spec | Create a new ActivitySpec.
-[**ActivitySpecDelete**](ActivitySpecApi.md#ActivitySpecDelete) | **DELETE** /activity_spec/{activity_spec_name} | Delete an ActivitySpec.
-[**ActivitySpecUpdate**](ActivitySpecApi.md#ActivitySpecUpdate) | **PUT** /activity_spec/{activity_spec_name} | Update an ActivitySpec.
-[**ActivitySpecView**](ActivitySpecApi.md#ActivitySpecView) | **GET** /activity_spec/{activity_spec_name} | View an ActivitySpec.
+[**all**](ActivitySpecApi.md#all) | **GET** /activity_spec | Get all ActivitySpecs registered.
+[**create**](ActivitySpecApi.md#create) | **POST** /activity_spec | Create a new ActivitySpec.
+[**delete**](ActivitySpecApi.md#delete) | **DELETE** /activity_spec/{activity_spec_name} | Delete an ActivitySpec.
+[**update**](ActivitySpecApi.md#update) | **PUT** /activity_spec/{activity_spec_name} | Update an ActivitySpec.
+[**view**](ActivitySpecApi.md#view) | **GET** /activity_spec/{activity_spec_name} | View an ActivitySpec.
 
 
-# **ActivitySpecAll**
-> array[object] ActivitySpecAll(transform=var.transform)
+# **all**
+> array[object] all()
 
 Get all ActivitySpecs registered.
 
@@ -22,13 +20,8 @@ Get all ActivitySpecs registered.
 ```R
 library(LAMP)
 
-var.transform <- 'transform_example' # character | 
-
 #Get all ActivitySpecs registered.
-api.instance <- ActivitySpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivitySpecAll(transform=var.transform)
+result <- LAMP.ActivitySpec$all()
 dput(result)
 ```
 
@@ -42,14 +35,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -60,8 +49,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivitySpecCreate**
-> character ActivitySpecCreate(activity.spec)
+# **create**
+> character create(activity.spec)
 
 Create a new ActivitySpec.
 
@@ -74,10 +63,7 @@ library(LAMP)
 var.activity.spec <- ActivitySpec$new("name_example", "help_contents_example", "script_contents_example", 123, 123, 123) # ActivitySpec | 
 
 #Create a new ActivitySpec.
-api.instance <- ActivitySpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivitySpecCreate(var.activity.spec)
+result <- LAMP.ActivitySpec$create(var.activity.spec)
 dput(result)
 ```
 
@@ -91,14 +77,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -109,8 +91,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivitySpecDelete**
-> character ActivitySpecDelete(activity.spec.name)
+# **delete**
+> character delete(activity.spec.name)
 
 Delete an ActivitySpec.
 
@@ -123,10 +105,7 @@ library(LAMP)
 var.activity.spec.name <- 'activity.spec.name_example' # character | 
 
 #Delete an ActivitySpec.
-api.instance <- ActivitySpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivitySpecDelete(var.activity.spec.name)
+result <- LAMP.ActivitySpec$delete(var.activity.spec.name)
 dput(result)
 ```
 
@@ -140,14 +119,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -158,8 +133,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivitySpecUpdate**
-> character ActivitySpecUpdate(activity.spec.name, activity.spec)
+# **update**
+> character update(activity.spec.name, activity.spec)
 
 Update an ActivitySpec.
 
@@ -173,10 +148,7 @@ var.activity.spec.name <- 'activity.spec.name_example' # character |
 var.activity.spec <- ActivitySpec$new("name_example", "help_contents_example", "script_contents_example", 123, 123, 123) # ActivitySpec | 
 
 #Update an ActivitySpec.
-api.instance <- ActivitySpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivitySpecUpdate(var.activity.spec.name, var.activity.spec)
+result <- LAMP.ActivitySpec$update(var.activity.spec.name, var.activity.spec)
 dput(result)
 ```
 
@@ -191,14 +163,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -209,8 +177,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivitySpecView**
-> character ActivitySpecView(activity.spec.name, transform=var.transform)
+# **view**
+> character view(activity.spec.name)
 
 View an ActivitySpec.
 
@@ -221,13 +189,9 @@ View an ActivitySpec.
 library(LAMP)
 
 var.activity.spec.name <- 'activity.spec.name_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #View an ActivitySpec.
-api.instance <- ActivitySpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivitySpecView(var.activity.spec.name, transform=var.transform)
+result <- LAMP.ActivitySpec$view(var.activity.spec.name)
 dput(result)
 ```
 
@@ -242,14 +206,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

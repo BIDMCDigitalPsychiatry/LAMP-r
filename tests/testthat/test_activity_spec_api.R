@@ -5,8 +5,8 @@ context("Test ActivitySpecApi")
 
 api.instance <- ActivitySpecApi$new()
 
-test_that("ActivitySpecAll", {
-  # tests for ActivitySpecAll
+test_that("all", {
+  # tests for all
   # base path: https://api.lamp.digital
   # Get all ActivitySpecs registered.
   # Get all ActivitySpecs registered.
@@ -17,8 +17,8 @@ test_that("ActivitySpecAll", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivitySpecCreate", {
-  # tests for ActivitySpecCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # Create a new ActivitySpec.
   # Create a new ActivitySpec.
@@ -29,8 +29,8 @@ test_that("ActivitySpecCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivitySpecDelete", {
-  # tests for ActivitySpecDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # Delete an ActivitySpec.
   # Delete an ActivitySpec.
@@ -41,8 +41,8 @@ test_that("ActivitySpecDelete", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivitySpecUpdate", {
-  # tests for ActivitySpecUpdate
+test_that("update", {
+  # tests for update
   # base path: https://api.lamp.digital
   # Update an ActivitySpec.
   # Update an ActivitySpec.
@@ -54,8 +54,8 @@ test_that("ActivitySpecUpdate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivitySpecView", {
-  # tests for ActivitySpecView
+test_that("view", {
+  # tests for view
   # base path: https://api.lamp.digital
   # View an ActivitySpec.
   # View an ActivitySpec.

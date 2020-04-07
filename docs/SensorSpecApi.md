@@ -1,18 +1,16 @@
-# SensorSpecApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.SensorSpec
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SensorSpecAll**](SensorSpecApi.md#SensorSpecAll) | **GET** /sensor_spec | Get all SensorSpecs registered.
-[**SensorSpecCreate**](SensorSpecApi.md#SensorSpecCreate) | **POST** /sensor_spec | Create a new SensorSpec.
-[**SensorSpecDelete**](SensorSpecApi.md#SensorSpecDelete) | **DELETE** /sensor_spec/{sensor_spec_name} | Delete an SensorSpec.
-[**SensorSpecUpdate**](SensorSpecApi.md#SensorSpecUpdate) | **PUT** /sensor_spec/{sensor_spec_name} | Update an SensorSpec.
-[**SensorSpecView**](SensorSpecApi.md#SensorSpecView) | **GET** /sensor_spec/{sensor_spec_name} | Get a SensorSpec.
+[**all**](SensorSpecApi.md#all) | **GET** /sensor_spec | Get all SensorSpecs registered.
+[**create**](SensorSpecApi.md#create) | **POST** /sensor_spec | Create a new SensorSpec.
+[**delete**](SensorSpecApi.md#delete) | **DELETE** /sensor_spec/{sensor_spec_name} | Delete an SensorSpec.
+[**update**](SensorSpecApi.md#update) | **PUT** /sensor_spec/{sensor_spec_name} | Update an SensorSpec.
+[**view**](SensorSpecApi.md#view) | **GET** /sensor_spec/{sensor_spec_name} | Get a SensorSpec.
 
 
-# **SensorSpecAll**
-> array[object] SensorSpecAll(transform=var.transform)
+# **all**
+> array[object] all()
 
 Get all SensorSpecs registered.
 
@@ -22,13 +20,8 @@ Get all SensorSpecs registered by any Researcher.
 ```R
 library(LAMP)
 
-var.transform <- 'transform_example' # character | 
-
 #Get all SensorSpecs registered.
-api.instance <- SensorSpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorSpecAll(transform=var.transform)
+result <- LAMP.SensorSpec$all()
 dput(result)
 ```
 
@@ -42,14 +35,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -60,8 +49,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorSpecCreate**
-> character SensorSpecCreate(sensor.spec)
+# **create**
+> character create(sensor.spec)
 
 Create a new SensorSpec.
 
@@ -74,10 +63,7 @@ library(LAMP)
 var.sensor.spec <- SensorSpec$new("name_example", 123) # SensorSpec | 
 
 #Create a new SensorSpec.
-api.instance <- SensorSpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorSpecCreate(var.sensor.spec)
+result <- LAMP.SensorSpec$create(var.sensor.spec)
 dput(result)
 ```
 
@@ -91,14 +77,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -109,8 +91,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorSpecDelete**
-> character SensorSpecDelete(sensor.spec.name)
+# **delete**
+> character delete(sensor.spec.name)
 
 Delete an SensorSpec.
 
@@ -123,10 +105,7 @@ library(LAMP)
 var.sensor.spec.name <- 'sensor.spec.name_example' # character | 
 
 #Delete an SensorSpec.
-api.instance <- SensorSpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorSpecDelete(var.sensor.spec.name)
+result <- LAMP.SensorSpec$delete(var.sensor.spec.name)
 dput(result)
 ```
 
@@ -140,14 +119,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -158,8 +133,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorSpecUpdate**
-> character SensorSpecUpdate(sensor.spec.name, sensor.spec)
+# **update**
+> character update(sensor.spec.name, sensor.spec)
 
 Update an SensorSpec.
 
@@ -173,10 +148,7 @@ var.sensor.spec.name <- 'sensor.spec.name_example' # character |
 var.sensor.spec <- SensorSpec$new("name_example", 123) # SensorSpec | 
 
 #Update an SensorSpec.
-api.instance <- SensorSpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorSpecUpdate(var.sensor.spec.name, var.sensor.spec)
+result <- LAMP.SensorSpec$update(var.sensor.spec.name, var.sensor.spec)
 dput(result)
 ```
 
@@ -191,14 +163,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -209,8 +177,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorSpecView**
-> array[object] SensorSpecView(sensor.spec.name, transform=var.transform)
+# **view**
+> array[object] view(sensor.spec.name)
 
 Get a SensorSpec.
 
@@ -221,13 +189,9 @@ Get a SensorSpec.
 library(LAMP)
 
 var.sensor.spec.name <- 'sensor.spec.name_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get a SensorSpec.
-api.instance <- SensorSpecApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorSpecView(var.sensor.spec.name, transform=var.transform)
+result <- LAMP.SensorSpec$view(var.sensor.spec.name)
 dput(result)
 ```
 
@@ -242,14 +206,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

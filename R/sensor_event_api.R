@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ SensorEventAllByParticipant } \emph{ Get all sensor events for a participant. }
+#' \strong{ allByParticipant } \emph{ Get all sensor events for a participant. }
 #' Get the set of all sensor events produced by the given participant.
 #'
 #' \itemize{
@@ -61,7 +61,7 @@
 #' }
 #' }
 #'
-#' \strong{ SensorEventAllByResearcher } \emph{ Get all sensor events for a researcher by participant. }
+#' \strong{ allByResearcher } \emph{ Get all sensor events for a researcher by participant. }
 #' Get the set of all sensor events produced by participants of any  study conducted by a researcher, by researcher identifier.
 #'
 #' \itemize{
@@ -109,7 +109,7 @@
 #' }
 #' }
 #'
-#' \strong{ SensorEventAllByStudy } \emph{ Get all sensor events for a study by participant. }
+#' \strong{ allByStudy } \emph{ Get all sensor events for a study by participant. }
 #' Get the set of all sensor events produced by participants of a  single study, by study identifier.
 #'
 #' \itemize{
@@ -157,7 +157,7 @@
 #' }
 #' }
 #'
-#' \strong{ SensorEventCreate } \emph{ Create a new SensorEvent for the given Participant. }
+#' \strong{ create } \emph{ Create a new SensorEvent for the given Participant. }
 #' Create a new SensorEvent for the given Participant.
 #'
 #' \itemize{
@@ -202,7 +202,7 @@
 #' }
 #' }
 #'
-#' \strong{ SensorEventDelete } \emph{ Delete a sensor event. }
+#' \strong{ delete } \emph{ Delete a sensor event. }
 #' Delete a sensor event.
 #'
 #' \itemize{
@@ -254,76 +254,53 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  SensorEventAllByParticipant  ####################
+#' ####################  allByParticipant  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
 #' var.origin <- 'origin_example' # character | 
 #' var.from <- 3.4 # numeric | 
 #' var.to <- 3.4 # numeric | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get all sensor events for a participant.
-#' api.instance <- SensorEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorEventAllByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+#' result <- LAMP.SensorEvent$allByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to)
 #'
 #'
-#' ####################  SensorEventAllByResearcher  ####################
+#' ####################  allByResearcher  ####################
 #'
 #' library(LAMP)
 #' var.researcher.id <- 'researcher.id_example' # character | 
 #' var.origin <- 'origin_example' # character | 
 #' var.from <- 3.4 # numeric | 
 #' var.to <- 3.4 # numeric | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get all sensor events for a researcher by participant.
-#' api.instance <- SensorEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorEventAllByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+#' result <- LAMP.SensorEvent$allByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to)
 #'
 #'
-#' ####################  SensorEventAllByStudy  ####################
+#' ####################  allByStudy  ####################
 #'
 #' library(LAMP)
 #' var.study.id <- 'study.id_example' # character | 
 #' var.origin <- 'origin_example' # character | 
 #' var.from <- 3.4 # numeric | 
 #' var.to <- 3.4 # numeric | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get all sensor events for a study by participant.
-#' api.instance <- SensorEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorEventAllByStudy(var.study.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+#' result <- LAMP.SensorEvent$allByStudy(var.study.id, origin=var.origin, from=var.from, to=var.to)
 #'
 #'
-#' ####################  SensorEventCreate  ####################
+#' ####################  create  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
 #' var.sensor.event <- SensorEvent$new() # SensorEvent | 
 #'
 #' #Create a new SensorEvent for the given Participant.
-#' api.instance <- SensorEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorEventCreate(var.participant.id, var.sensor.event)
+#' result <- LAMP.SensorEvent$create(var.participant.id, var.sensor.event)
 #'
 #'
-#' ####################  SensorEventDelete  ####################
+#' ####################  delete  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
@@ -332,12 +309,7 @@
 #' var.to <- 3.4 # numeric | 
 #'
 #' #Delete a sensor event.
-#' api.instance <- SensorEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorEventDelete(var.participant.id, origin=var.origin, from=var.from, to=var.to)
+#' result <- LAMP.SensorEvent$delete(var.participant.id, origin=var.origin, from=var.from, to=var.to)
 #'
 #'
 #' }
@@ -356,8 +328,8 @@ SensorEventApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    SensorEventAllByParticipant = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
-      apiResponse <- self$SensorEventAllByParticipantWithHttpInfo(participant.id, origin, from, to, transform, ...)
+    allByParticipant = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+      apiResponse <- self$allByParticipantWithHttpInfo(participant.id, origin, from, to, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -370,7 +342,7 @@ SensorEventApi <- R6::R6Class(
       }
     },
 
-    SensorEventAllByParticipantWithHttpInfo = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+    allByParticipantWithHttpInfo = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -420,8 +392,8 @@ SensorEventApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    SensorEventAllByResearcher = function(researcher.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
-      apiResponse <- self$SensorEventAllByResearcherWithHttpInfo(researcher.id, origin, from, to, transform, ...)
+    allByResearcher = function(researcher.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+      apiResponse <- self$allByResearcherWithHttpInfo(researcher.id, origin, from, to, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -434,7 +406,7 @@ SensorEventApi <- R6::R6Class(
       }
     },
 
-    SensorEventAllByResearcherWithHttpInfo = function(researcher.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+    allByResearcherWithHttpInfo = function(researcher.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -484,8 +456,8 @@ SensorEventApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    SensorEventAllByStudy = function(study.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
-      apiResponse <- self$SensorEventAllByStudyWithHttpInfo(study.id, origin, from, to, transform, ...)
+    allByStudy = function(study.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+      apiResponse <- self$allByStudyWithHttpInfo(study.id, origin, from, to, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -498,7 +470,7 @@ SensorEventApi <- R6::R6Class(
       }
     },
 
-    SensorEventAllByStudyWithHttpInfo = function(study.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+    allByStudyWithHttpInfo = function(study.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -548,8 +520,8 @@ SensorEventApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    SensorEventCreate = function(participant.id, sensor.event, ...){
-      apiResponse <- self$SensorEventCreateWithHttpInfo(participant.id, sensor.event, ...)
+    create = function(participant.id, sensor.event, ...){
+      apiResponse <- self$createWithHttpInfo(participant.id, sensor.event, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -562,7 +534,7 @@ SensorEventApi <- R6::R6Class(
       }
     },
 
-    SensorEventCreateWithHttpInfo = function(participant.id, sensor.event, ...){
+    createWithHttpInfo = function(participant.id, sensor.event, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -614,8 +586,8 @@ SensorEventApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    SensorEventDelete = function(participant.id, origin=NULL, from=NULL, to=NULL, ...){
-      apiResponse <- self$SensorEventDeleteWithHttpInfo(participant.id, origin, from, to, ...)
+    delete = function(participant.id, origin=NULL, from=NULL, to=NULL, ...){
+      apiResponse <- self$deleteWithHttpInfo(participant.id, origin, from, to, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -628,7 +600,7 @@ SensorEventApi <- R6::R6Class(
       }
     },
 
-    SensorEventDeleteWithHttpInfo = function(participant.id, origin=NULL, from=NULL, to=NULL, ...){
+    deleteWithHttpInfo = function(participant.id, origin=NULL, from=NULL, to=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

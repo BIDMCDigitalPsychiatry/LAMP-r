@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ SensorSpecAll } \emph{ Get all SensorSpecs registered. }
+#' \strong{ all } \emph{ Get all SensorSpecs registered. }
 #' Get all SensorSpecs registered by any Researcher.
 #'
 #' \itemize{
@@ -57,7 +57,7 @@
 #' }
 #' }
 #'
-#' \strong{ SensorSpecCreate } \emph{ Create a new SensorSpec. }
+#' \strong{ create } \emph{ Create a new SensorSpec. }
 #' Create a new SensorSpec.
 #'
 #' \itemize{
@@ -101,7 +101,7 @@
 #' }
 #' }
 #'
-#' \strong{ SensorSpecDelete } \emph{ Delete an SensorSpec. }
+#' \strong{ delete } \emph{ Delete an SensorSpec. }
 #' Delete an SensorSpec.
 #'
 #' \itemize{
@@ -145,7 +145,7 @@
 #' }
 #' }
 #'
-#' \strong{ SensorSpecUpdate } \emph{ Update an SensorSpec. }
+#' \strong{ update } \emph{ Update an SensorSpec. }
 #' Update an SensorSpec.
 #'
 #' \itemize{
@@ -190,7 +190,7 @@
 #' }
 #' }
 #'
-#' \strong{ SensorSpecView } \emph{ Get a SensorSpec. }
+#' \strong{ view } \emph{ Get a SensorSpec. }
 #' Get a SensorSpec.
 #'
 #' \itemize{
@@ -240,76 +240,49 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  SensorSpecAll  ####################
+#' ####################  all  ####################
 #'
 #' library(LAMP)
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get all SensorSpecs registered.
-#' api.instance <- SensorSpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorSpecAll(transform=var.transform)
+#' result <- LAMP.SensorSpec$all()
 #'
 #'
-#' ####################  SensorSpecCreate  ####################
+#' ####################  create  ####################
 #'
 #' library(LAMP)
 #' var.sensor.spec <- SensorSpec$new() # SensorSpec | 
 #'
 #' #Create a new SensorSpec.
-#' api.instance <- SensorSpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorSpecCreate(var.sensor.spec)
+#' result <- LAMP.SensorSpec$create(var.sensor.spec)
 #'
 #'
-#' ####################  SensorSpecDelete  ####################
+#' ####################  delete  ####################
 #'
 #' library(LAMP)
 #' var.sensor.spec.name <- 'sensor.spec.name_example' # character | 
 #'
 #' #Delete an SensorSpec.
-#' api.instance <- SensorSpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorSpecDelete(var.sensor.spec.name)
+#' result <- LAMP.SensorSpec$delete(var.sensor.spec.name)
 #'
 #'
-#' ####################  SensorSpecUpdate  ####################
+#' ####################  update  ####################
 #'
 #' library(LAMP)
 #' var.sensor.spec.name <- 'sensor.spec.name_example' # character | 
 #' var.sensor.spec <- SensorSpec$new() # SensorSpec | 
 #'
 #' #Update an SensorSpec.
-#' api.instance <- SensorSpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorSpecUpdate(var.sensor.spec.name, var.sensor.spec)
+#' result <- LAMP.SensorSpec$update(var.sensor.spec.name, var.sensor.spec)
 #'
 #'
-#' ####################  SensorSpecView  ####################
+#' ####################  view  ####################
 #'
 #' library(LAMP)
 #' var.sensor.spec.name <- 'sensor.spec.name_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get a SensorSpec.
-#' api.instance <- SensorSpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$SensorSpecView(var.sensor.spec.name, transform=var.transform)
+#' result <- LAMP.SensorSpec$view(var.sensor.spec.name)
 #'
 #'
 #' }
@@ -328,8 +301,8 @@ SensorSpecApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    SensorSpecAll = function(transform=NULL, ...){
-      apiResponse <- self$SensorSpecAllWithHttpInfo(transform, ...)
+    all = function(transform=NULL, ...){
+      apiResponse <- self$allWithHttpInfo(transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -342,7 +315,7 @@ SensorSpecApi <- R6::R6Class(
       }
     },
 
-    SensorSpecAllWithHttpInfo = function(transform=NULL, ...){
+    allWithHttpInfo = function(transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -378,8 +351,8 @@ SensorSpecApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    SensorSpecCreate = function(sensor.spec, ...){
-      apiResponse <- self$SensorSpecCreateWithHttpInfo(sensor.spec, ...)
+    create = function(sensor.spec, ...){
+      apiResponse <- self$createWithHttpInfo(sensor.spec, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -392,7 +365,7 @@ SensorSpecApi <- R6::R6Class(
       }
     },
 
-    SensorSpecCreateWithHttpInfo = function(sensor.spec, ...){
+    createWithHttpInfo = function(sensor.spec, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -436,8 +409,8 @@ SensorSpecApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    SensorSpecDelete = function(sensor.spec.name, ...){
-      apiResponse <- self$SensorSpecDeleteWithHttpInfo(sensor.spec.name, ...)
+    delete = function(sensor.spec.name, ...){
+      apiResponse <- self$deleteWithHttpInfo(sensor.spec.name, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -450,7 +423,7 @@ SensorSpecApi <- R6::R6Class(
       }
     },
 
-    SensorSpecDeleteWithHttpInfo = function(sensor.spec.name, ...){
+    deleteWithHttpInfo = function(sensor.spec.name, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -492,8 +465,8 @@ SensorSpecApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    SensorSpecUpdate = function(sensor.spec.name, sensor.spec, ...){
-      apiResponse <- self$SensorSpecUpdateWithHttpInfo(sensor.spec.name, sensor.spec, ...)
+    update = function(sensor.spec.name, sensor.spec, ...){
+      apiResponse <- self$updateWithHttpInfo(sensor.spec.name, sensor.spec, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -506,7 +479,7 @@ SensorSpecApi <- R6::R6Class(
       }
     },
 
-    SensorSpecUpdateWithHttpInfo = function(sensor.spec.name, sensor.spec, ...){
+    updateWithHttpInfo = function(sensor.spec.name, sensor.spec, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -558,8 +531,8 @@ SensorSpecApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    SensorSpecView = function(sensor.spec.name, transform=NULL, ...){
-      apiResponse <- self$SensorSpecViewWithHttpInfo(sensor.spec.name, transform, ...)
+    view = function(sensor.spec.name, transform=NULL, ...){
+      apiResponse <- self$viewWithHttpInfo(sensor.spec.name, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -572,7 +545,7 @@ SensorSpecApi <- R6::R6Class(
       }
     },
 
-    SensorSpecViewWithHttpInfo = function(sensor.spec.name, transform=NULL, ...){
+    viewWithHttpInfo = function(sensor.spec.name, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

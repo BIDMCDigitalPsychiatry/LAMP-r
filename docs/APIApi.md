@@ -1,15 +1,13 @@
-# APIApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.API
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**APIQuery**](APIApi.md#APIQuery) | **POST** / | Query the LAMP Database.
-[**APISchema**](APIApi.md#APISchema) | **GET** / | View the API schema document.
+[**query**](APIApi.md#query) | **POST** / | Query the LAMP Database.
+[**schema**](APIApi.md#schema) | **GET** / | View the API schema document.
 
 
-# **APIQuery**
-> object APIQuery(body)
+# **query**
+> object query(body)
 
 Query the LAMP Database.
 
@@ -25,7 +23,7 @@ var.body <- 'body_example' # character |
 api.instance <- APIApi$new()
 # Configure API key authorization: Authorization
 api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$APIQuery(var.body)
+result <- api.instance$query(var.body)
 dput(result)
 ```
 
@@ -39,14 +37,10 @@ Name | Type | Description  | Notes
 
 **object**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
  - **Content-Type**: text/plain, application/json
- - **Accept**: application/json
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -54,8 +48,8 @@ Name | Type | Description  | Notes
 | **200** | 200 Success |  -  |
 | **0** | 400 Bad Request |  -  |
 
-# **APISchema**
-> object APISchema()
+# **schema**
+> object schema()
 
 View the API schema document.
 
@@ -68,7 +62,7 @@ library(LAMP)
 
 #View the API schema document.
 api.instance <- APIApi$new()
-result <- api.instance$APISchema()
+result <- api.instance$schema()
 dput(result)
 ```
 
@@ -85,8 +79,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

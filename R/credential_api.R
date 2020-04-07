@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ CredentialCreate } \emph{  }
+#' \strong{ create } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -58,7 +58,7 @@
 #' }
 #' }
 #'
-#' \strong{ CredentialDelete } \emph{  }
+#' \strong{ delete } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -103,7 +103,7 @@
 #' }
 #' }
 #'
-#' \strong{ CredentialList } \emph{  }
+#' \strong{ list } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -148,7 +148,7 @@
 #' }
 #' }
 #'
-#' \strong{ CredentialUpdate } \emph{  }
+#' \strong{ update } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -199,61 +199,40 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  CredentialCreate  ####################
+#' ####################  create  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
 #' var.body <- NULL # object | 
 #'
-#' api.instance <- CredentialApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$CredentialCreate(var.type.id, var.body)
+#' result <- LAMP.Credential$create(var.type.id, var.body)
 #'
 #'
-#' ####################  CredentialDelete  ####################
+#' ####################  delete  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
 #' var.access.key <- 'access.key_example' # character | 
 #'
-#' api.instance <- CredentialApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$CredentialDelete(var.type.id, var.access.key)
+#' result <- LAMP.Credential$delete(var.type.id, var.access.key)
 #'
 #'
-#' ####################  CredentialList  ####################
+#' ####################  list  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
-#' api.instance <- CredentialApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$CredentialList(var.type.id, transform=var.transform)
+#' result <- LAMP.Credential$list(var.type.id)
 #'
 #'
-#' ####################  CredentialUpdate  ####################
+#' ####################  update  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
 #' var.access.key <- 'access.key_example' # character | 
 #' var.body <- NULL # object | 
 #'
-#' api.instance <- CredentialApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$CredentialUpdate(var.type.id, var.access.key, var.body)
+#' result <- LAMP.Credential$update(var.type.id, var.access.key, var.body)
 #'
 #'
 #' }
@@ -272,8 +251,8 @@ CredentialApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    CredentialCreate = function(type.id, body, ...){
-      apiResponse <- self$CredentialCreateWithHttpInfo(type.id, body, ...)
+    create = function(type.id, body, ...){
+      apiResponse <- self$createWithHttpInfo(type.id, body, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -286,7 +265,7 @@ CredentialApi <- R6::R6Class(
       }
     },
 
-    CredentialCreateWithHttpInfo = function(type.id, body, ...){
+    createWithHttpInfo = function(type.id, body, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -338,8 +317,8 @@ CredentialApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    CredentialDelete = function(type.id, access.key, ...){
-      apiResponse <- self$CredentialDeleteWithHttpInfo(type.id, access.key, ...)
+    delete = function(type.id, access.key, ...){
+      apiResponse <- self$deleteWithHttpInfo(type.id, access.key, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -352,7 +331,7 @@ CredentialApi <- R6::R6Class(
       }
     },
 
-    CredentialDeleteWithHttpInfo = function(type.id, access.key, ...){
+    deleteWithHttpInfo = function(type.id, access.key, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -402,8 +381,8 @@ CredentialApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    CredentialList = function(type.id, transform=NULL, ...){
-      apiResponse <- self$CredentialListWithHttpInfo(type.id, transform, ...)
+    list = function(type.id, transform=NULL, ...){
+      apiResponse <- self$listWithHttpInfo(type.id, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -416,7 +395,7 @@ CredentialApi <- R6::R6Class(
       }
     },
 
-    CredentialListWithHttpInfo = function(type.id, transform=NULL, ...){
+    listWithHttpInfo = function(type.id, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -460,8 +439,8 @@ CredentialApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    CredentialUpdate = function(type.id, access.key, body, ...){
-      apiResponse <- self$CredentialUpdateWithHttpInfo(type.id, access.key, body, ...)
+    update = function(type.id, access.key, body, ...){
+      apiResponse <- self$updateWithHttpInfo(type.id, access.key, body, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -474,7 +453,7 @@ CredentialApi <- R6::R6Class(
       }
     },
 
-    CredentialUpdateWithHttpInfo = function(type.id, access.key, body, ...){
+    updateWithHttpInfo = function(type.id, access.key, body, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

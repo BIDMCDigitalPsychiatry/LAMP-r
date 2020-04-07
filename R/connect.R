@@ -2,7 +2,9 @@
 #' @export
 LAMP_connect <- function(root_url, username, password) {
   LAMP <<- ApiClient$new(root_url, defaultHeaders=c(Authorization = paste('Basic', paste(username, password, sep = ':'))))
+  LAMP.API <<- APIApi$new(LAMP)
   LAMP.Type <<- TypeApi$new(LAMP)
+  LAMP.Credential <<- CredentialApi$new(LAMP)
   LAMP.Researcher <<- ResearcherApi$new(LAMP)
   LAMP.Study <<- StudyApi$new(LAMP)
   LAMP.Participant <<- ParticipantApi$new(LAMP)

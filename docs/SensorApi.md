@@ -1,21 +1,19 @@
-# SensorApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.Sensor
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SensorAll**](SensorApi.md#SensorAll) | **GET** /sensor | Get the set of all sensors.
-[**SensorAllByParticipant**](SensorApi.md#SensorAllByParticipant) | **GET** /participant/{participant_id}/sensor | Get all sensors for a participant.
-[**SensorAllByResearcher**](SensorApi.md#SensorAllByResearcher) | **GET** /researcher/{researcher_id}/sensor | Get all sensors for a researcher.
-[**SensorAllByStudy**](SensorApi.md#SensorAllByStudy) | **GET** /study/{study_id}/sensor | View all sensors in a study.
-[**SensorCreate**](SensorApi.md#SensorCreate) | **POST** /study/{study_id}/sensor | Create a new Sensor under the given Study.
-[**SensorDelete**](SensorApi.md#SensorDelete) | **DELETE** /sensor/{sensor_id} | Delete a Sensor.
-[**SensorUpdate**](SensorApi.md#SensorUpdate) | **PUT** /sensor/{sensor_id} | Update an Sensor&#39;s settings.
-[**SensorView**](SensorApi.md#SensorView) | **GET** /sensor/{sensor_id} | Get a single sensor, by identifier.
+[**all**](SensorApi.md#all) | **GET** /sensor | Get the set of all sensors.
+[**allByParticipant**](SensorApi.md#allByParticipant) | **GET** /participant/{participant_id}/sensor | Get all sensors for a participant.
+[**allByResearcher**](SensorApi.md#allByResearcher) | **GET** /researcher/{researcher_id}/sensor | Get all sensors for a researcher.
+[**allByStudy**](SensorApi.md#allByStudy) | **GET** /study/{study_id}/sensor | View all sensors in a study.
+[**create**](SensorApi.md#create) | **POST** /study/{study_id}/sensor | Create a new Sensor under the given Study.
+[**delete**](SensorApi.md#delete) | **DELETE** /sensor/{sensor_id} | Delete a Sensor.
+[**update**](SensorApi.md#update) | **PUT** /sensor/{sensor_id} | Update an Sensor&#39;s settings.
+[**view**](SensorApi.md#view) | **GET** /sensor/{sensor_id} | Get a single sensor, by identifier.
 
 
-# **SensorAll**
-> array[object] SensorAll(transform=var.transform)
+# **all**
+> array[object] all()
 
 Get the set of all sensors.
 
@@ -25,13 +23,8 @@ Get the set of all sensors.
 ```R
 library(LAMP)
 
-var.transform <- 'transform_example' # character | 
-
 #Get the set of all sensors.
-api.instance <- SensorApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorAll(transform=var.transform)
+result <- LAMP.Sensor$all()
 dput(result)
 ```
 
@@ -45,14 +38,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -63,8 +52,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorAllByParticipant**
-> array[object] SensorAllByParticipant(participant.id, transform=var.transform)
+# **allByParticipant**
+> array[object] allByParticipant(participant.id)
 
 Get all sensors for a participant.
 
@@ -75,13 +64,9 @@ Get the set of all sensors available to a participant, by participant  identifie
 library(LAMP)
 
 var.participant.id <- 'participant.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get all sensors for a participant.
-api.instance <- SensorApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorAllByParticipant(var.participant.id, transform=var.transform)
+result <- LAMP.Sensor$allByParticipant(var.participant.id)
 dput(result)
 ```
 
@@ -96,14 +81,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -114,8 +95,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorAllByResearcher**
-> array[object] SensorAllByResearcher(researcher.id, transform=var.transform)
+# **allByResearcher**
+> array[object] allByResearcher(researcher.id)
 
 Get all sensors for a researcher.
 
@@ -126,13 +107,9 @@ Get the set of all sensors available to participants of any study conducted  by 
 library(LAMP)
 
 var.researcher.id <- 'researcher.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get all sensors for a researcher.
-api.instance <- SensorApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorAllByResearcher(var.researcher.id, transform=var.transform)
+result <- LAMP.Sensor$allByResearcher(var.researcher.id)
 dput(result)
 ```
 
@@ -147,14 +124,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -165,8 +138,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorAllByStudy**
-> array[object] SensorAllByStudy(study.id, transform=var.transform)
+# **allByStudy**
+> array[object] allByStudy(study.id)
 
 View all sensors in a study.
 
@@ -177,13 +150,9 @@ Get the set of all sensors available to participants of a single  study, by stud
 library(LAMP)
 
 var.study.id <- 'study.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #View all sensors in a study.
-api.instance <- SensorApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorAllByStudy(var.study.id, transform=var.transform)
+result <- LAMP.Sensor$allByStudy(var.study.id)
 dput(result)
 ```
 
@@ -198,14 +167,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -216,8 +181,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorCreate**
-> character SensorCreate(study.id, sensor)
+# **create**
+> character create(study.id, sensor)
 
 Create a new Sensor under the given Study.
 
@@ -231,10 +196,7 @@ var.study.id <- 'study.id_example' # character |
 var.sensor <- Sensor$new("id_example", "spec_example", "name_example", 123) # Sensor | 
 
 #Create a new Sensor under the given Study.
-api.instance <- SensorApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorCreate(var.study.id, var.sensor)
+result <- LAMP.Sensor$create(var.study.id, var.sensor)
 dput(result)
 ```
 
@@ -249,14 +211,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -267,8 +225,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorDelete**
-> character SensorDelete(sensor.id)
+# **delete**
+> character delete(sensor.id)
 
 Delete a Sensor.
 
@@ -281,10 +239,7 @@ library(LAMP)
 var.sensor.id <- 'sensor.id_example' # character | 
 
 #Delete a Sensor.
-api.instance <- SensorApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorDelete(var.sensor.id)
+result <- LAMP.Sensor$delete(var.sensor.id)
 dput(result)
 ```
 
@@ -298,14 +253,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -316,8 +267,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorUpdate**
-> character SensorUpdate(sensor.id, sensor)
+# **update**
+> character update(sensor.id, sensor)
 
 Update an Sensor's settings.
 
@@ -331,10 +282,7 @@ var.sensor.id <- 'sensor.id_example' # character |
 var.sensor <- Sensor$new("id_example", "spec_example", "name_example", 123) # Sensor | 
 
 #Update an Sensor's settings.
-api.instance <- SensorApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorUpdate(var.sensor.id, var.sensor)
+result <- LAMP.Sensor$update(var.sensor.id, var.sensor)
 dput(result)
 ```
 
@@ -349,14 +297,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -367,8 +311,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorView**
-> array[object] SensorView(sensor.id, transform=var.transform)
+# **view**
+> array[object] view(sensor.id)
 
 Get a single sensor, by identifier.
 
@@ -379,13 +323,9 @@ Get a single sensor, by identifier.
 library(LAMP)
 
 var.sensor.id <- 'sensor.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get a single sensor, by identifier.
-api.instance <- SensorApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorView(var.sensor.id, transform=var.transform)
+result <- LAMP.Sensor$view(var.sensor.id)
 dput(result)
 ```
 
@@ -400,14 +340,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ ActivityEventAllByParticipant } \emph{ Get all activity events for a participant. }
+#' \strong{ allByParticipant } \emph{ Get all activity events for a participant. }
 #' Get the set of all activity events produced by a given participant,  by identifier.
 #'
 #' \itemize{
@@ -61,7 +61,7 @@
 #' }
 #' }
 #'
-#' \strong{ ActivityEventAllByResearcher } \emph{ Get all activity events for a researcher by participant. }
+#' \strong{ allByResearcher } \emph{ Get all activity events for a researcher by participant. }
 #' Get the set of all activity events produced by participants of any  study conducted by a researcher, by researcher identifier.
 #'
 #' \itemize{
@@ -109,7 +109,7 @@
 #' }
 #' }
 #'
-#' \strong{ ActivityEventAllByStudy } \emph{ Get all activity events for a study by participant. }
+#' \strong{ allByStudy } \emph{ Get all activity events for a study by participant. }
 #' Get the set of all activity events produced by participants of a  single study, by study identifier.
 #'
 #' \itemize{
@@ -157,7 +157,7 @@
 #' }
 #' }
 #'
-#' \strong{ ActivityEventCreate } \emph{ Create a new ActivityEvent for the given Participant. }
+#' \strong{ create } \emph{ Create a new ActivityEvent for the given Participant. }
 #' Create a new ActivityEvent for the given Participant.
 #'
 #' \itemize{
@@ -202,7 +202,7 @@
 #' }
 #' }
 #'
-#' \strong{ ActivityEventDelete } \emph{ Delete a ActivityEvent. }
+#' \strong{ delete } \emph{ Delete a ActivityEvent. }
 #' Delete a ActivityEvent.
 #'
 #' \itemize{
@@ -255,91 +255,62 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  ActivityEventAllByParticipant  ####################
+#' ####################  allByParticipant  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
 #' var.origin <- 'origin_example' # character | 
 #' var.from <- 3.4 # numeric | 
 #' var.to <- 3.4 # numeric | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get all activity events for a participant.
-#' api.instance <- ActivityEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivityEventAllByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+#' result <- LAMP.ActivityEvent$allByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to)
 #'
 #'
-#' ####################  ActivityEventAllByResearcher  ####################
+#' ####################  allByResearcher  ####################
 #'
 #' library(LAMP)
 #' var.researcher.id <- 'researcher.id_example' # character | 
 #' var.origin <- 'origin_example' # character | 
 #' var.from <- 3.4 # numeric | 
 #' var.to <- 3.4 # numeric | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get all activity events for a researcher by participant.
-#' api.instance <- ActivityEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivityEventAllByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+#' result <- LAMP.ActivityEvent$allByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to)
 #'
 #'
-#' ####################  ActivityEventAllByStudy  ####################
+#' ####################  allByStudy  ####################
 #'
 #' library(LAMP)
 #' var.study.id <- 'study.id_example' # character | 
 #' var.origin <- 'origin_example' # character | 
 #' var.from <- 3.4 # numeric | 
 #' var.to <- 3.4 # numeric | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get all activity events for a study by participant.
-#' api.instance <- ActivityEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivityEventAllByStudy(var.study.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+#' result <- LAMP.ActivityEvent$allByStudy(var.study.id, origin=var.origin, from=var.from, to=var.to)
 #'
 #'
-#' ####################  ActivityEventCreate  ####################
+#' ####################  create  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
 #' var.activity.event <- ActivityEvent$new() # ActivityEvent | 
 #'
 #' #Create a new ActivityEvent for the given Participant.
-#' api.instance <- ActivityEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivityEventCreate(var.participant.id, var.activity.event)
+#' result <- LAMP.ActivityEvent$create(var.participant.id, var.activity.event)
 #'
 #'
-#' ####################  ActivityEventDelete  ####################
+#' ####################  delete  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
 #' var.origin <- 'origin_example' # character | 
 #' var.from <- 3.4 # numeric | 
 #' var.to <- 3.4 # numeric | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Delete a ActivityEvent.
-#' api.instance <- ActivityEventApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivityEventDelete(var.participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+#' result <- LAMP.ActivityEvent$delete(var.participant.id, origin=var.origin, from=var.from, to=var.to)
 #'
 #'
 #' }
@@ -358,8 +329,8 @@ ActivityEventApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    ActivityEventAllByParticipant = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
-      apiResponse <- self$ActivityEventAllByParticipantWithHttpInfo(participant.id, origin, from, to, transform, ...)
+    allByParticipant = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+      apiResponse <- self$allByParticipantWithHttpInfo(participant.id, origin, from, to, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -372,7 +343,7 @@ ActivityEventApi <- R6::R6Class(
       }
     },
 
-    ActivityEventAllByParticipantWithHttpInfo = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+    allByParticipantWithHttpInfo = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -422,8 +393,8 @@ ActivityEventApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ActivityEventAllByResearcher = function(researcher.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
-      apiResponse <- self$ActivityEventAllByResearcherWithHttpInfo(researcher.id, origin, from, to, transform, ...)
+    allByResearcher = function(researcher.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+      apiResponse <- self$allByResearcherWithHttpInfo(researcher.id, origin, from, to, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -436,7 +407,7 @@ ActivityEventApi <- R6::R6Class(
       }
     },
 
-    ActivityEventAllByResearcherWithHttpInfo = function(researcher.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+    allByResearcherWithHttpInfo = function(researcher.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -486,8 +457,8 @@ ActivityEventApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ActivityEventAllByStudy = function(study.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
-      apiResponse <- self$ActivityEventAllByStudyWithHttpInfo(study.id, origin, from, to, transform, ...)
+    allByStudy = function(study.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+      apiResponse <- self$allByStudyWithHttpInfo(study.id, origin, from, to, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -500,7 +471,7 @@ ActivityEventApi <- R6::R6Class(
       }
     },
 
-    ActivityEventAllByStudyWithHttpInfo = function(study.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+    allByStudyWithHttpInfo = function(study.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -550,8 +521,8 @@ ActivityEventApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ActivityEventCreate = function(participant.id, activity.event, ...){
-      apiResponse <- self$ActivityEventCreateWithHttpInfo(participant.id, activity.event, ...)
+    create = function(participant.id, activity.event, ...){
+      apiResponse <- self$createWithHttpInfo(participant.id, activity.event, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -564,7 +535,7 @@ ActivityEventApi <- R6::R6Class(
       }
     },
 
-    ActivityEventCreateWithHttpInfo = function(participant.id, activity.event, ...){
+    createWithHttpInfo = function(participant.id, activity.event, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -616,8 +587,8 @@ ActivityEventApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ActivityEventDelete = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
-      apiResponse <- self$ActivityEventDeleteWithHttpInfo(participant.id, origin, from, to, transform, ...)
+    delete = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+      apiResponse <- self$deleteWithHttpInfo(participant.id, origin, from, to, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -630,7 +601,7 @@ ActivityEventApi <- R6::R6Class(
       }
     },
 
-    ActivityEventDeleteWithHttpInfo = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
+    deleteWithHttpInfo = function(participant.id, origin=NULL, from=NULL, to=NULL, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

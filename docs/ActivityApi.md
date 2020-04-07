@@ -1,21 +1,19 @@
-# ActivityApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.Activity
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActivityAll**](ActivityApi.md#ActivityAll) | **GET** /activity | Get the set of all activities.
-[**ActivityAllByParticipant**](ActivityApi.md#ActivityAllByParticipant) | **GET** /participant/{participant_id}/activity | Get all activities for a participant.
-[**ActivityAllByResearcher**](ActivityApi.md#ActivityAllByResearcher) | **GET** /researcher/{researcher_id}/activity | Get all activities for a researcher.
-[**ActivityAllByStudy**](ActivityApi.md#ActivityAllByStudy) | **GET** /study/{study_id}/activity | Get all activities in a study.
-[**ActivityCreate**](ActivityApi.md#ActivityCreate) | **POST** /study/{study_id}/activity | Create a new Activity under the given Study.
-[**ActivityDelete**](ActivityApi.md#ActivityDelete) | **DELETE** /activity/{activity_id} | Delete an Activity.
-[**ActivityUpdate**](ActivityApi.md#ActivityUpdate) | **PUT** /activity/{activity_id} | Update an Activity&#39;s settings.
-[**ActivityView**](ActivityApi.md#ActivityView) | **GET** /activity/{activity_id} | Get a single activity, by identifier.
+[**all**](ActivityApi.md#all) | **GET** /activity | Get the set of all activities.
+[**allByParticipant**](ActivityApi.md#allByParticipant) | **GET** /participant/{participant_id}/activity | Get all activities for a participant.
+[**allByResearcher**](ActivityApi.md#allByResearcher) | **GET** /researcher/{researcher_id}/activity | Get all activities for a researcher.
+[**allByStudy**](ActivityApi.md#allByStudy) | **GET** /study/{study_id}/activity | Get all activities in a study.
+[**create**](ActivityApi.md#create) | **POST** /study/{study_id}/activity | Create a new Activity under the given Study.
+[**delete**](ActivityApi.md#delete) | **DELETE** /activity/{activity_id} | Delete an Activity.
+[**update**](ActivityApi.md#update) | **PUT** /activity/{activity_id} | Update an Activity&#39;s settings.
+[**view**](ActivityApi.md#view) | **GET** /activity/{activity_id} | Get a single activity, by identifier.
 
 
-# **ActivityAll**
-> array[object] ActivityAll(transform=var.transform)
+# **all**
+> array[object] all()
 
 Get the set of all activities.
 
@@ -25,13 +23,8 @@ Get the set of all activities.
 ```R
 library(LAMP)
 
-var.transform <- 'transform_example' # character | 
-
 #Get the set of all activities.
-api.instance <- ActivityApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityAll(transform=var.transform)
+result <- LAMP.Activity$all()
 dput(result)
 ```
 
@@ -45,14 +38,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -63,8 +52,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityAllByParticipant**
-> array[object] ActivityAllByParticipant(participant.id, transform=var.transform)
+# **allByParticipant**
+> array[object] allByParticipant(participant.id)
 
 Get all activities for a participant.
 
@@ -75,13 +64,9 @@ Get the set of all activities available to a participant, by  participant identi
 library(LAMP)
 
 var.participant.id <- 'participant.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get all activities for a participant.
-api.instance <- ActivityApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityAllByParticipant(var.participant.id, transform=var.transform)
+result <- LAMP.Activity$allByParticipant(var.participant.id)
 dput(result)
 ```
 
@@ -96,14 +81,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -114,8 +95,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityAllByResearcher**
-> array[object] ActivityAllByResearcher(researcher.id, transform=var.transform)
+# **allByResearcher**
+> array[object] allByResearcher(researcher.id)
 
 Get all activities for a researcher.
 
@@ -126,13 +107,9 @@ Get the set of all activities available to participants of any study  conducted 
 library(LAMP)
 
 var.researcher.id <- 'researcher.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get all activities for a researcher.
-api.instance <- ActivityApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityAllByResearcher(var.researcher.id, transform=var.transform)
+result <- LAMP.Activity$allByResearcher(var.researcher.id)
 dput(result)
 ```
 
@@ -147,14 +124,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -165,8 +138,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityAllByStudy**
-> array[object] ActivityAllByStudy(study.id, transform=var.transform)
+# **allByStudy**
+> array[object] allByStudy(study.id)
 
 Get all activities in a study.
 
@@ -177,13 +150,9 @@ Get the set of all activities available to  participants of a single  study, by 
 library(LAMP)
 
 var.study.id <- 'study.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get all activities in a study.
-api.instance <- ActivityApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityAllByStudy(var.study.id, transform=var.transform)
+result <- LAMP.Activity$allByStudy(var.study.id)
 dput(result)
 ```
 
@@ -198,14 +167,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -216,8 +181,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityCreate**
-> character ActivityCreate(study.id, activity)
+# **create**
+> character create(study.id, activity)
 
 Create a new Activity under the given Study.
 
@@ -231,10 +196,7 @@ var.study.id <- 'study.id_example' # character |
 var.activity <- Activity$new("id_example", "spec_example", "name_example", DurationIntervalLegacy$new("repeat_type_example", 123, list(123)), 123) # Activity | 
 
 #Create a new Activity under the given Study.
-api.instance <- ActivityApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityCreate(var.study.id, var.activity)
+result <- LAMP.Activity$create(var.study.id, var.activity)
 dput(result)
 ```
 
@@ -249,14 +211,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -267,8 +225,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityDelete**
-> character ActivityDelete(activity.id)
+# **delete**
+> character delete(activity.id)
 
 Delete an Activity.
 
@@ -281,10 +239,7 @@ library(LAMP)
 var.activity.id <- 'activity.id_example' # character | 
 
 #Delete an Activity.
-api.instance <- ActivityApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityDelete(var.activity.id)
+result <- LAMP.Activity$delete(var.activity.id)
 dput(result)
 ```
 
@@ -298,14 +253,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -316,8 +267,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityUpdate**
-> character ActivityUpdate(activity.id, activity)
+# **update**
+> character update(activity.id, activity)
 
 Update an Activity's settings.
 
@@ -331,10 +282,7 @@ var.activity.id <- 'activity.id_example' # character |
 var.activity <- Activity$new("id_example", "spec_example", "name_example", DurationIntervalLegacy$new("repeat_type_example", 123, list(123)), 123) # Activity | 
 
 #Update an Activity's settings.
-api.instance <- ActivityApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityUpdate(var.activity.id, var.activity)
+result <- LAMP.Activity$update(var.activity.id, var.activity)
 dput(result)
 ```
 
@@ -349,14 +297,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -367,8 +311,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityView**
-> array[object] ActivityView(activity.id, transform=var.transform)
+# **view**
+> array[object] view(activity.id)
 
 Get a single activity, by identifier.
 
@@ -379,13 +323,9 @@ Get a single activity, by identifier.
 library(LAMP)
 
 var.activity.id <- 'activity.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get a single activity, by identifier.
-api.instance <- ActivityApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityView(var.activity.id, transform=var.transform)
+result <- LAMP.Activity$view(var.activity.id)
 dput(result)
 ```
 
@@ -400,14 +340,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ TypeGetAttachment } \emph{  }
+#' \strong{ getAttachment } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -58,7 +58,7 @@
 #' }
 #' }
 #'
-#' \strong{ TypeGetDynamicAttachment } \emph{  }
+#' \strong{ getDynamicAttachment } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -106,7 +106,7 @@
 #' }
 #' }
 #'
-#' \strong{ TypeListAttachments } \emph{  }
+#' \strong{ listAttachments } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -150,7 +150,7 @@
 #' }
 #' }
 #'
-#' \strong{ TypeParent } \emph{ Find the owner(s) of the resource. }
+#' \strong{ parent } \emph{ Find the owner(s) of the resource. }
 #' Get the parent type identifier of the data structure referenced by the identifier.
 #'
 #' \itemize{
@@ -195,7 +195,7 @@
 #' }
 #' }
 #'
-#' \strong{ TypeSetAttachment } \emph{  }
+#' \strong{ setAttachment } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -242,7 +242,7 @@
 #' }
 #' }
 #'
-#' \strong{ TypeSetDynamicAttachment } \emph{  }
+#' \strong{ setDynamicAttachment } \emph{  }
 #' 
 #'
 #' \itemize{
@@ -295,21 +295,16 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  TypeGetAttachment  ####################
+#' ####################  getAttachment  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
 #' var.attachment.key <- 'attachment.key_example' # character | 
 #'
-#' api.instance <- TypeApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$TypeGetAttachment(var.type.id, var.attachment.key)
+#' result <- LAMP.Type$getAttachment(var.type.id, var.attachment.key)
 #'
 #'
-#' ####################  TypeGetDynamicAttachment  ####################
+#' ####################  getDynamicAttachment  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
@@ -318,43 +313,27 @@
 #' var.include.logs <- 'include.logs_example' # character | 
 #' var.ignore.output <- 'ignore.output_example' # character | 
 #'
-#' api.instance <- TypeApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$TypeGetDynamicAttachment(var.type.id, var.attachment.key, var.invoke.always, var.include.logs, var.ignore.output)
+#' result <- LAMP.Type$getDynamicAttachment(var.type.id, var.attachment.key, var.invoke.always, var.include.logs, var.ignore.output)
 #'
 #'
-#' ####################  TypeListAttachments  ####################
+#' ####################  listAttachments  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
 #'
-#' api.instance <- TypeApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$TypeListAttachments(var.type.id)
+#' result <- LAMP.Type$listAttachments(var.type.id)
 #'
 #'
-#' ####################  TypeParent  ####################
+#' ####################  parent  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Find the owner(s) of the resource.
-#' api.instance <- TypeApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$TypeParent(var.type.id, transform=var.transform)
+#' result <- LAMP.Type$parent(var.type.id)
 #'
 #'
-#' ####################  TypeSetAttachment  ####################
+#' ####################  setAttachment  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
@@ -362,15 +341,10 @@
 #' var.attachment.key <- 'attachment.key_example' # character | 
 #' var.body <- NULL # object | 
 #'
-#' api.instance <- TypeApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$TypeSetAttachment(var.type.id, var.target, var.attachment.key, var.body)
+#' result <- LAMP.Type$setAttachment(var.type.id, var.target, var.attachment.key, var.body)
 #'
 #'
-#' ####################  TypeSetDynamicAttachment  ####################
+#' ####################  setDynamicAttachment  ####################
 #'
 #' library(LAMP)
 #' var.type.id <- 'type.id_example' # character | 
@@ -379,12 +353,7 @@
 #' var.invoke.once <- 'invoke.once_example' # character | 
 #' var.dynamic.attachment <- DynamicAttachment$new() # DynamicAttachment | 
 #'
-#' api.instance <- TypeApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$TypeSetDynamicAttachment(var.type.id, var.target, var.attachment.key, var.invoke.once, var.dynamic.attachment)
+#' result <- LAMP.Type$setDynamicAttachment(var.type.id, var.target, var.attachment.key, var.invoke.once, var.dynamic.attachment)
 #'
 #'
 #' }
@@ -403,8 +372,8 @@ TypeApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    TypeGetAttachment = function(type.id, attachment.key, ...){
-      apiResponse <- self$TypeGetAttachmentWithHttpInfo(type.id, attachment.key, ...)
+    getAttachment = function(type.id, attachment.key, ...){
+      apiResponse <- self$getAttachmentWithHttpInfo(type.id, attachment.key, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -417,7 +386,7 @@ TypeApi <- R6::R6Class(
       }
     },
 
-    TypeGetAttachmentWithHttpInfo = function(type.id, attachment.key, ...){
+    getAttachmentWithHttpInfo = function(type.id, attachment.key, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -467,8 +436,8 @@ TypeApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    TypeGetDynamicAttachment = function(type.id, attachment.key, invoke.always, include.logs, ignore.output, ...){
-      apiResponse <- self$TypeGetDynamicAttachmentWithHttpInfo(type.id, attachment.key, invoke.always, include.logs, ignore.output, ...)
+    getDynamicAttachment = function(type.id, attachment.key, invoke.always, include.logs, ignore.output, ...){
+      apiResponse <- self$getDynamicAttachmentWithHttpInfo(type.id, attachment.key, invoke.always, include.logs, ignore.output, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -481,7 +450,7 @@ TypeApi <- R6::R6Class(
       }
     },
 
-    TypeGetDynamicAttachmentWithHttpInfo = function(type.id, attachment.key, invoke.always, include.logs, ignore.output, ...){
+    getDynamicAttachmentWithHttpInfo = function(type.id, attachment.key, invoke.always, include.logs, ignore.output, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -549,8 +518,8 @@ TypeApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    TypeListAttachments = function(type.id, ...){
-      apiResponse <- self$TypeListAttachmentsWithHttpInfo(type.id, ...)
+    listAttachments = function(type.id, ...){
+      apiResponse <- self$listAttachmentsWithHttpInfo(type.id, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -563,7 +532,7 @@ TypeApi <- R6::R6Class(
       }
     },
 
-    TypeListAttachmentsWithHttpInfo = function(type.id, ...){
+    listAttachmentsWithHttpInfo = function(type.id, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -605,8 +574,8 @@ TypeApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    TypeParent = function(type.id, transform=NULL, ...){
-      apiResponse <- self$TypeParentWithHttpInfo(type.id, transform, ...)
+    parent = function(type.id, transform=NULL, ...){
+      apiResponse <- self$parentWithHttpInfo(type.id, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -619,7 +588,7 @@ TypeApi <- R6::R6Class(
       }
     },
 
-    TypeParentWithHttpInfo = function(type.id, transform=NULL, ...){
+    parentWithHttpInfo = function(type.id, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -663,8 +632,8 @@ TypeApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    TypeSetAttachment = function(type.id, target, attachment.key, body, ...){
-      apiResponse <- self$TypeSetAttachmentWithHttpInfo(type.id, target, attachment.key, body, ...)
+    setAttachment = function(type.id, target, attachment.key, body, ...){
+      apiResponse <- self$setAttachmentWithHttpInfo(type.id, target, attachment.key, body, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -677,7 +646,7 @@ TypeApi <- R6::R6Class(
       }
     },
 
-    TypeSetAttachmentWithHttpInfo = function(type.id, target, attachment.key, body, ...){
+    setAttachmentWithHttpInfo = function(type.id, target, attachment.key, body, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -745,8 +714,8 @@ TypeApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    TypeSetDynamicAttachment = function(type.id, target, attachment.key, invoke.once, dynamic.attachment, ...){
-      apiResponse <- self$TypeSetDynamicAttachmentWithHttpInfo(type.id, target, attachment.key, invoke.once, dynamic.attachment, ...)
+    setDynamicAttachment = function(type.id, target, attachment.key, invoke.once, dynamic.attachment, ...){
+      apiResponse <- self$setDynamicAttachmentWithHttpInfo(type.id, target, attachment.key, invoke.once, dynamic.attachment, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -759,7 +728,7 @@ TypeApi <- R6::R6Class(
       }
     },
 
-    TypeSetDynamicAttachmentWithHttpInfo = function(type.id, target, attachment.key, invoke.once, dynamic.attachment, ...){
+    setDynamicAttachmentWithHttpInfo = function(type.id, target, attachment.key, invoke.once, dynamic.attachment, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

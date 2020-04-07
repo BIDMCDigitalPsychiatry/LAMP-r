@@ -5,8 +5,8 @@ context("Test SensorApi")
 
 api.instance <- SensorApi$new()
 
-test_that("SensorAll", {
-  # tests for SensorAll
+test_that("all", {
+  # tests for all
   # base path: https://api.lamp.digital
   # Get the set of all sensors.
   # Get the set of all sensors.
@@ -17,8 +17,8 @@ test_that("SensorAll", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorAllByParticipant", {
-  # tests for SensorAllByParticipant
+test_that("allByParticipant", {
+  # tests for allByParticipant
   # base path: https://api.lamp.digital
   # Get all sensors for a participant.
   # Get the set of all sensors available to a participant, by participant  identifier.
@@ -30,8 +30,8 @@ test_that("SensorAllByParticipant", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorAllByResearcher", {
-  # tests for SensorAllByResearcher
+test_that("allByResearcher", {
+  # tests for allByResearcher
   # base path: https://api.lamp.digital
   # Get all sensors for a researcher.
   # Get the set of all sensors available to participants of any study conducted  by a researcher, by researcher identifier.
@@ -43,8 +43,8 @@ test_that("SensorAllByResearcher", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorAllByStudy", {
-  # tests for SensorAllByStudy
+test_that("allByStudy", {
+  # tests for allByStudy
   # base path: https://api.lamp.digital
   # View all sensors in a study.
   # Get the set of all sensors available to participants of a single  study, by study identifier.
@@ -56,8 +56,8 @@ test_that("SensorAllByStudy", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorCreate", {
-  # tests for SensorCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # Create a new Sensor under the given Study.
   # Create a new Sensor under the given Study.
@@ -69,8 +69,8 @@ test_that("SensorCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorDelete", {
-  # tests for SensorDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # Delete a Sensor.
   # Delete a Sensor.
@@ -81,8 +81,8 @@ test_that("SensorDelete", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorUpdate", {
-  # tests for SensorUpdate
+test_that("update", {
+  # tests for update
   # base path: https://api.lamp.digital
   # Update an Sensor&#39;s settings.
   # Update an Sensor&#39;s settings.
@@ -94,8 +94,8 @@ test_that("SensorUpdate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorView", {
-  # tests for SensorView
+test_that("view", {
+  # tests for view
   # base path: https://api.lamp.digital
   # Get a single sensor, by identifier.
   # Get a single sensor, by identifier.

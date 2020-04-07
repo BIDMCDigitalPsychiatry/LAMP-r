@@ -5,8 +5,8 @@ context("Test StudyApi")
 
 api.instance <- StudyApi$new()
 
-test_that("StudyAll", {
-  # tests for StudyAll
+test_that("all", {
+  # tests for all
   # base path: https://api.lamp.digital
   # Get the set of all studies.
   # Get the set of all studies.
@@ -17,8 +17,8 @@ test_that("StudyAll", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("StudyAllByResearcher", {
-  # tests for StudyAllByResearcher
+test_that("allByResearcher", {
+  # tests for allByResearcher
   # base path: https://api.lamp.digital
   # Get the set of studies for a single researcher.
   # Get the set of studies for a single researcher.
@@ -30,8 +30,8 @@ test_that("StudyAllByResearcher", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("StudyCreate", {
-  # tests for StudyCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # Create a new Study for the given Researcher.
   # Create a new Study for the given Researcher.
@@ -43,8 +43,8 @@ test_that("StudyCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("StudyDelete", {
-  # tests for StudyDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # Delete a study.
   # Delete a study.
@@ -55,8 +55,8 @@ test_that("StudyDelete", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("StudyUpdate", {
-  # tests for StudyUpdate
+test_that("update", {
+  # tests for update
   # base path: https://api.lamp.digital
   # Update the study.
   # Update the study.
@@ -68,8 +68,8 @@ test_that("StudyUpdate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("StudyView", {
-  # tests for StudyView
+test_that("view", {
+  # tests for view
   # base path: https://api.lamp.digital
   # Get a single study, by identifier.
   # Get a single study, by identifier.

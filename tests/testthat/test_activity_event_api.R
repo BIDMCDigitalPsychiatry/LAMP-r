@@ -5,8 +5,8 @@ context("Test ActivityEventApi")
 
 api.instance <- ActivityEventApi$new()
 
-test_that("ActivityEventAllByParticipant", {
-  # tests for ActivityEventAllByParticipant
+test_that("allByParticipant", {
+  # tests for allByParticipant
   # base path: https://api.lamp.digital
   # Get all activity events for a participant.
   # Get the set of all activity events produced by a given participant,  by identifier.
@@ -21,8 +21,8 @@ test_that("ActivityEventAllByParticipant", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityEventAllByResearcher", {
-  # tests for ActivityEventAllByResearcher
+test_that("allByResearcher", {
+  # tests for allByResearcher
   # base path: https://api.lamp.digital
   # Get all activity events for a researcher by participant.
   # Get the set of all activity events produced by participants of any  study conducted by a researcher, by researcher identifier.
@@ -37,8 +37,8 @@ test_that("ActivityEventAllByResearcher", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityEventAllByStudy", {
-  # tests for ActivityEventAllByStudy
+test_that("allByStudy", {
+  # tests for allByStudy
   # base path: https://api.lamp.digital
   # Get all activity events for a study by participant.
   # Get the set of all activity events produced by participants of a  single study, by study identifier.
@@ -53,8 +53,8 @@ test_that("ActivityEventAllByStudy", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityEventCreate", {
-  # tests for ActivityEventCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # Create a new ActivityEvent for the given Participant.
   # Create a new ActivityEvent for the given Participant.
@@ -66,8 +66,8 @@ test_that("ActivityEventCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityEventDelete", {
-  # tests for ActivityEventDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # Delete a ActivityEvent.
   # Delete a ActivityEvent.

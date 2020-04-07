@@ -1,19 +1,17 @@
-# StudyApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.Study
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**StudyAll**](StudyApi.md#StudyAll) | **GET** /study | Get the set of all studies.
-[**StudyAllByResearcher**](StudyApi.md#StudyAllByResearcher) | **GET** /researcher/{researcher_id}/study | Get the set of studies for a single researcher.
-[**StudyCreate**](StudyApi.md#StudyCreate) | **POST** /researcher/{researcher_id}/study | Create a new Study for the given Researcher.
-[**StudyDelete**](StudyApi.md#StudyDelete) | **DELETE** /study/{study_id} | Delete a study.
-[**StudyUpdate**](StudyApi.md#StudyUpdate) | **PUT** /study/{study_id} | Update the study.
-[**StudyView**](StudyApi.md#StudyView) | **GET** /study/{study_id} | Get a single study, by identifier.
+[**all**](StudyApi.md#all) | **GET** /study | Get the set of all studies.
+[**allByResearcher**](StudyApi.md#allByResearcher) | **GET** /researcher/{researcher_id}/study | Get the set of studies for a single researcher.
+[**create**](StudyApi.md#create) | **POST** /researcher/{researcher_id}/study | Create a new Study for the given Researcher.
+[**delete**](StudyApi.md#delete) | **DELETE** /study/{study_id} | Delete a study.
+[**update**](StudyApi.md#update) | **PUT** /study/{study_id} | Update the study.
+[**view**](StudyApi.md#view) | **GET** /study/{study_id} | Get a single study, by identifier.
 
 
-# **StudyAll**
-> array[object] StudyAll(transform=var.transform)
+# **all**
+> array[object] all()
 
 Get the set of all studies.
 
@@ -23,13 +21,8 @@ Get the set of all studies.
 ```R
 library(LAMP)
 
-var.transform <- 'transform_example' # character | 
-
 #Get the set of all studies.
-api.instance <- StudyApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$StudyAll(transform=var.transform)
+result <- LAMP.Study$all()
 dput(result)
 ```
 
@@ -43,14 +36,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -61,8 +50,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **StudyAllByResearcher**
-> array[object] StudyAllByResearcher(researcher.id, transform=var.transform)
+# **allByResearcher**
+> array[object] allByResearcher(researcher.id)
 
 Get the set of studies for a single researcher.
 
@@ -73,13 +62,9 @@ Get the set of studies for a single researcher.
 library(LAMP)
 
 var.researcher.id <- 'researcher.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get the set of studies for a single researcher.
-api.instance <- StudyApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$StudyAllByResearcher(var.researcher.id, transform=var.transform)
+result <- LAMP.Study$allByResearcher(var.researcher.id)
 dput(result)
 ```
 
@@ -94,14 +79,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -112,8 +93,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **StudyCreate**
-> character StudyCreate(researcher.id, study)
+# **create**
+> character create(researcher.id, study)
 
 Create a new Study for the given Researcher.
 
@@ -127,10 +108,7 @@ var.researcher.id <- 'researcher.id_example' # character |
 var.study <- Study$new("id_example", "name_example", list(123), list(123)) # Study | 
 
 #Create a new Study for the given Researcher.
-api.instance <- StudyApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$StudyCreate(var.researcher.id, var.study)
+result <- LAMP.Study$create(var.researcher.id, var.study)
 dput(result)
 ```
 
@@ -145,14 +123,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -163,8 +137,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **StudyDelete**
-> character StudyDelete(study.id)
+# **delete**
+> character delete(study.id)
 
 Delete a study.
 
@@ -177,10 +151,7 @@ library(LAMP)
 var.study.id <- 'study.id_example' # character | 
 
 #Delete a study.
-api.instance <- StudyApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$StudyDelete(var.study.id)
+result <- LAMP.Study$delete(var.study.id)
 dput(result)
 ```
 
@@ -194,14 +165,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -212,8 +179,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **StudyUpdate**
-> character StudyUpdate(study.id, study)
+# **update**
+> character update(study.id, study)
 
 Update the study.
 
@@ -227,10 +194,7 @@ var.study.id <- 'study.id_example' # character |
 var.study <- Study$new("id_example", "name_example", list(123), list(123)) # Study | 
 
 #Update the study.
-api.instance <- StudyApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$StudyUpdate(var.study.id, var.study)
+result <- LAMP.Study$update(var.study.id, var.study)
 dput(result)
 ```
 
@@ -245,14 +209,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -263,8 +223,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **StudyView**
-> array[object] StudyView(study.id, transform=var.transform)
+# **view**
+> array[object] view(study.id)
 
 Get a single study, by identifier.
 
@@ -275,13 +235,9 @@ Get a single study, by identifier.
 library(LAMP)
 
 var.study.id <- 'study.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get a single study, by identifier.
-api.instance <- StudyApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$StudyView(var.study.id, transform=var.transform)
+result <- LAMP.Study$view(var.study.id)
 dput(result)
 ```
 
@@ -296,14 +252,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

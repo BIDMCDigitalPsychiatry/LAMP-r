@@ -5,8 +5,8 @@ context("Test SensorEventApi")
 
 api.instance <- SensorEventApi$new()
 
-test_that("SensorEventAllByParticipant", {
-  # tests for SensorEventAllByParticipant
+test_that("allByParticipant", {
+  # tests for allByParticipant
   # base path: https://api.lamp.digital
   # Get all sensor events for a participant.
   # Get the set of all sensor events produced by the given participant.
@@ -21,8 +21,8 @@ test_that("SensorEventAllByParticipant", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorEventAllByResearcher", {
-  # tests for SensorEventAllByResearcher
+test_that("allByResearcher", {
+  # tests for allByResearcher
   # base path: https://api.lamp.digital
   # Get all sensor events for a researcher by participant.
   # Get the set of all sensor events produced by participants of any  study conducted by a researcher, by researcher identifier.
@@ -37,8 +37,8 @@ test_that("SensorEventAllByResearcher", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorEventAllByStudy", {
-  # tests for SensorEventAllByStudy
+test_that("allByStudy", {
+  # tests for allByStudy
   # base path: https://api.lamp.digital
   # Get all sensor events for a study by participant.
   # Get the set of all sensor events produced by participants of a  single study, by study identifier.
@@ -53,8 +53,8 @@ test_that("SensorEventAllByStudy", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorEventCreate", {
-  # tests for SensorEventCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # Create a new SensorEvent for the given Participant.
   # Create a new SensorEvent for the given Participant.
@@ -66,8 +66,8 @@ test_that("SensorEventCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorEventDelete", {
-  # tests for SensorEventDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # Delete a sensor event.
   # Delete a sensor event.

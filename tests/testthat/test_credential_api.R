@@ -5,8 +5,8 @@ context("Test CredentialApi")
 
 api.instance <- CredentialApi$new()
 
-test_that("CredentialCreate", {
-  # tests for CredentialCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @param object  body   
@@ -16,8 +16,8 @@ test_that("CredentialCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("CredentialDelete", {
-  # tests for CredentialDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @param character  access.key   
@@ -27,8 +27,8 @@ test_that("CredentialDelete", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("CredentialList", {
-  # tests for CredentialList
+test_that("list", {
+  # tests for list
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @param character  transform    (optional)
@@ -38,8 +38,8 @@ test_that("CredentialList", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("CredentialUpdate", {
-  # tests for CredentialUpdate
+test_that("update", {
+  # tests for update
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @param character  access.key   

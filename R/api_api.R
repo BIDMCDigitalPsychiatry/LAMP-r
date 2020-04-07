@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ APIQuery } \emph{ Query the LAMP Database. }
+#' \strong{ query } \emph{ Query the LAMP Database. }
 #' Query the LAMP Database using a transformation document. All GET operations in this API schema document are available by replacing the period with an underscore (i.e. &#x60;$Participant_view(...)&#x60; instead of &#x60;Participant.view(...)&#x60;). The &#x60;origin&#x60;, &#x60;from&#x60;, and &#x60;to&#x60; parameters of EventStream functions are preserved but the &#x60;transform&#x60; parameter is not.
 #'
 #' \itemize{
@@ -36,7 +36,7 @@
 #' }
 #' }
 #'
-#' \strong{ APISchema } \emph{ View the API schema document. }
+#' \strong{ schema } \emph{ View the API schema document. }
 #' View this API schema document from a live server instance.
 #'
 #' \itemize{
@@ -56,28 +56,21 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  APIQuery  ####################
+#' ####################  query  ####################
 #'
 #' library(LAMP)
 #' var.body <- 'body_example' # character | 
 #'
 #' #Query the LAMP Database.
-#' api.instance <- APIApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$APIQuery(var.body)
+#' result <- LAMP.API$query(var.body)
 #'
 #'
-#' ####################  APISchema  ####################
+#' ####################  schema  ####################
 #'
 #' library(LAMP)
 #'
 #' #View the API schema document.
-#' api.instance <- APIApi$new()
-#'
-#' result <- api.instance$APISchema()
+#' result <- LAMP.API$schema()
 #'
 #'
 #' }
@@ -96,8 +89,8 @@ APIApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    APIQuery = function(body, ...){
-      apiResponse <- self$APIQueryWithHttpInfo(body, ...)
+    query = function(body, ...){
+      apiResponse <- self$queryWithHttpInfo(body, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -110,7 +103,7 @@ APIApi <- R6::R6Class(
       }
     },
 
-    APIQueryWithHttpInfo = function(body, ...){
+    queryWithHttpInfo = function(body, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -154,8 +147,8 @@ APIApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    APISchema = function(...){
-      apiResponse <- self$APISchemaWithHttpInfo(...)
+    schema = function(...){
+      apiResponse <- self$schemaWithHttpInfo(...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -168,7 +161,7 @@ APIApi <- R6::R6Class(
       }
     },
 
-    APISchemaWithHttpInfo = function(...){
+    schemaWithHttpInfo = function(...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

@@ -1,18 +1,16 @@
-# ActivityEventApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.ActivityEvent
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ActivityEventAllByParticipant**](ActivityEventApi.md#ActivityEventAllByParticipant) | **GET** /participant/{participant_id}/activity_event | Get all activity events for a participant.
-[**ActivityEventAllByResearcher**](ActivityEventApi.md#ActivityEventAllByResearcher) | **GET** /researcher/{researcher_id}/activity_event | Get all activity events for a researcher by participant.
-[**ActivityEventAllByStudy**](ActivityEventApi.md#ActivityEventAllByStudy) | **GET** /study/{study_id}/activity_event | Get all activity events for a study by participant.
-[**ActivityEventCreate**](ActivityEventApi.md#ActivityEventCreate) | **POST** /participant/{participant_id}/activity_event | Create a new ActivityEvent for the given Participant.
-[**ActivityEventDelete**](ActivityEventApi.md#ActivityEventDelete) | **DELETE** /participant/{participant_id}/activity_event | Delete a ActivityEvent.
+[**allByParticipant**](ActivityEventApi.md#allByParticipant) | **GET** /participant/{participant_id}/activity_event | Get all activity events for a participant.
+[**allByResearcher**](ActivityEventApi.md#allByResearcher) | **GET** /researcher/{researcher_id}/activity_event | Get all activity events for a researcher by participant.
+[**allByStudy**](ActivityEventApi.md#allByStudy) | **GET** /study/{study_id}/activity_event | Get all activity events for a study by participant.
+[**create**](ActivityEventApi.md#create) | **POST** /participant/{participant_id}/activity_event | Create a new ActivityEvent for the given Participant.
+[**delete**](ActivityEventApi.md#delete) | **DELETE** /participant/{participant_id}/activity_event | Delete a ActivityEvent.
 
 
-# **ActivityEventAllByParticipant**
-> array[object] ActivityEventAllByParticipant(participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+# **allByParticipant**
+> array[object] allByParticipant(participant.id, origin=var.origin, from=var.from, to=var.to)
 
 Get all activity events for a participant.
 
@@ -26,13 +24,9 @@ var.participant.id <- 'participant.id_example' # character |
 var.origin <- 'origin_example' # character | 
 var.from <- 3.4 # numeric | 
 var.to <- 3.4 # numeric | 
-var.transform <- 'transform_example' # character | 
 
 #Get all activity events for a participant.
-api.instance <- ActivityEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityEventAllByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+result <- LAMP.ActivityEvent$allByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to)
 dput(result)
 ```
 
@@ -50,14 +44,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -68,8 +58,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityEventAllByResearcher**
-> array[object] ActivityEventAllByResearcher(researcher.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+# **allByResearcher**
+> array[object] allByResearcher(researcher.id, origin=var.origin, from=var.from, to=var.to)
 
 Get all activity events for a researcher by participant.
 
@@ -83,13 +73,9 @@ var.researcher.id <- 'researcher.id_example' # character |
 var.origin <- 'origin_example' # character | 
 var.from <- 3.4 # numeric | 
 var.to <- 3.4 # numeric | 
-var.transform <- 'transform_example' # character | 
 
 #Get all activity events for a researcher by participant.
-api.instance <- ActivityEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityEventAllByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+result <- LAMP.ActivityEvent$allByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to)
 dput(result)
 ```
 
@@ -107,14 +93,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -125,8 +107,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityEventAllByStudy**
-> array[object] ActivityEventAllByStudy(study.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+# **allByStudy**
+> array[object] allByStudy(study.id, origin=var.origin, from=var.from, to=var.to)
 
 Get all activity events for a study by participant.
 
@@ -140,13 +122,9 @@ var.study.id <- 'study.id_example' # character |
 var.origin <- 'origin_example' # character | 
 var.from <- 3.4 # numeric | 
 var.to <- 3.4 # numeric | 
-var.transform <- 'transform_example' # character | 
 
 #Get all activity events for a study by participant.
-api.instance <- ActivityEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityEventAllByStudy(var.study.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+result <- LAMP.ActivityEvent$allByStudy(var.study.id, origin=var.origin, from=var.from, to=var.to)
 dput(result)
 ```
 
@@ -164,14 +142,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -182,8 +156,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityEventCreate**
-> character ActivityEventCreate(participant.id, activity.event)
+# **create**
+> character create(participant.id, activity.event)
 
 Create a new ActivityEvent for the given Participant.
 
@@ -197,10 +171,7 @@ var.participant.id <- 'participant.id_example' # character |
 var.activity.event <- ActivityEvent$new(123, 123, "activity_example", 123, list(123)) # ActivityEvent | 
 
 #Create a new ActivityEvent for the given Participant.
-api.instance <- ActivityEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityEventCreate(var.participant.id, var.activity.event)
+result <- LAMP.ActivityEvent$create(var.participant.id, var.activity.event)
 dput(result)
 ```
 
@@ -215,14 +186,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -233,8 +200,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ActivityEventDelete**
-> character ActivityEventDelete(participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+# **delete**
+> character delete(participant.id, origin=var.origin, from=var.from, to=var.to)
 
 Delete a ActivityEvent.
 
@@ -248,13 +215,9 @@ var.participant.id <- 'participant.id_example' # character |
 var.origin <- 'origin_example' # character | 
 var.from <- 3.4 # numeric | 
 var.to <- 3.4 # numeric | 
-var.transform <- 'transform_example' # character | 
 
 #Delete a ActivityEvent.
-api.instance <- ActivityEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ActivityEventDelete(var.participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+result <- LAMP.ActivityEvent$delete(var.participant.id, origin=var.origin, from=var.from, to=var.to)
 dput(result)
 ```
 
@@ -272,14 +235,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

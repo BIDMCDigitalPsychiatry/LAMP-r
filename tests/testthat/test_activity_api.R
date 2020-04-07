@@ -5,8 +5,8 @@ context("Test ActivityApi")
 
 api.instance <- ActivityApi$new()
 
-test_that("ActivityAll", {
-  # tests for ActivityAll
+test_that("all", {
+  # tests for all
   # base path: https://api.lamp.digital
   # Get the set of all activities.
   # Get the set of all activities.
@@ -17,8 +17,8 @@ test_that("ActivityAll", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityAllByParticipant", {
-  # tests for ActivityAllByParticipant
+test_that("allByParticipant", {
+  # tests for allByParticipant
   # base path: https://api.lamp.digital
   # Get all activities for a participant.
   # Get the set of all activities available to a participant, by  participant identifier.
@@ -30,8 +30,8 @@ test_that("ActivityAllByParticipant", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityAllByResearcher", {
-  # tests for ActivityAllByResearcher
+test_that("allByResearcher", {
+  # tests for allByResearcher
   # base path: https://api.lamp.digital
   # Get all activities for a researcher.
   # Get the set of all activities available to participants of any study  conducted by a researcher, by researcher identifier.
@@ -43,8 +43,8 @@ test_that("ActivityAllByResearcher", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityAllByStudy", {
-  # tests for ActivityAllByStudy
+test_that("allByStudy", {
+  # tests for allByStudy
   # base path: https://api.lamp.digital
   # Get all activities in a study.
   # Get the set of all activities available to  participants of a single  study, by study identifier.
@@ -56,8 +56,8 @@ test_that("ActivityAllByStudy", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityCreate", {
-  # tests for ActivityCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # Create a new Activity under the given Study.
   # Create a new Activity under the given Study.
@@ -69,8 +69,8 @@ test_that("ActivityCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityDelete", {
-  # tests for ActivityDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # Delete an Activity.
   # Delete an Activity.
@@ -81,8 +81,8 @@ test_that("ActivityDelete", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityUpdate", {
-  # tests for ActivityUpdate
+test_that("update", {
+  # tests for update
   # base path: https://api.lamp.digital
   # Update an Activity&#39;s settings.
   # Update an Activity&#39;s settings.
@@ -94,8 +94,8 @@ test_that("ActivityUpdate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ActivityView", {
-  # tests for ActivityView
+test_that("view", {
+  # tests for view
   # base path: https://api.lamp.digital
   # Get a single activity, by identifier.
   # Get a single activity, by identifier.

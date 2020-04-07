@@ -1,17 +1,15 @@
-# CredentialApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.Credential
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CredentialCreate**](CredentialApi.md#CredentialCreate) | **POST** /type/{type_id}/credential | 
-[**CredentialDelete**](CredentialApi.md#CredentialDelete) | **DELETE** /type/{type_id}/credential/{access_key} | 
-[**CredentialList**](CredentialApi.md#CredentialList) | **GET** /type/{type_id}/credential | 
-[**CredentialUpdate**](CredentialApi.md#CredentialUpdate) | **PUT** /type/{type_id}/credential/{access_key} | 
+[**create**](CredentialApi.md#create) | **POST** /type/{type_id}/credential | 
+[**delete**](CredentialApi.md#delete) | **DELETE** /type/{type_id}/credential/{access_key} | 
+[**list**](CredentialApi.md#list) | **GET** /type/{type_id}/credential | 
+[**update**](CredentialApi.md#update) | **PUT** /type/{type_id}/credential/{access_key} | 
 
 
-# **CredentialCreate**
-> object CredentialCreate(type.id, body)
+# **create**
+> object create(type.id, body)
 
 
 
@@ -22,10 +20,7 @@ library(LAMP)
 var.type.id <- 'type.id_example' # character | 
 var.body <- NULL # object | 
 
-api.instance <- CredentialApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$CredentialCreate(var.type.id, var.body)
+result <- LAMP.Credential$create(var.type.id, var.body)
 dput(result)
 ```
 
@@ -40,14 +35,10 @@ Name | Type | Description  | Notes
 
 **object**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -58,8 +49,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **CredentialDelete**
-> object CredentialDelete(type.id, access.key)
+# **delete**
+> object delete(type.id, access.key)
 
 
 
@@ -70,10 +61,7 @@ library(LAMP)
 var.type.id <- 'type.id_example' # character | 
 var.access.key <- 'access.key_example' # character | 
 
-api.instance <- CredentialApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$CredentialDelete(var.type.id, var.access.key)
+result <- LAMP.Credential$delete(var.type.id, var.access.key)
 dput(result)
 ```
 
@@ -88,14 +76,10 @@ Name | Type | Description  | Notes
 
 **object**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -106,8 +90,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **CredentialList**
-> object CredentialList(type.id, transform=var.transform)
+# **list**
+> object list(type.id)
 
 
 
@@ -116,12 +100,8 @@ Name | Type | Description  | Notes
 library(LAMP)
 
 var.type.id <- 'type.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
-api.instance <- CredentialApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$CredentialList(var.type.id, transform=var.transform)
+result <- LAMP.Credential$list(var.type.id)
 dput(result)
 ```
 
@@ -136,14 +116,10 @@ Name | Type | Description  | Notes
 
 **object**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -154,8 +130,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **CredentialUpdate**
-> object CredentialUpdate(type.id, access.key, body)
+# **update**
+> object update(type.id, access.key, body)
 
 
 
@@ -167,10 +143,7 @@ var.type.id <- 'type.id_example' # character |
 var.access.key <- 'access.key_example' # character | 
 var.body <- NULL # object | 
 
-api.instance <- CredentialApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$CredentialUpdate(var.type.id, var.access.key, var.body)
+result <- LAMP.Credential$update(var.type.id, var.access.key, var.body)
 dput(result)
 ```
 
@@ -186,14 +159,10 @@ Name | Type | Description  | Notes
 
 **object**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

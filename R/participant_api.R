@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ ParticipantAll } \emph{ Get the set of all participants. }
+#' \strong{ all } \emph{ Get the set of all participants. }
 #' Get the set of all participants.
 #'
 #' \itemize{
@@ -57,7 +57,7 @@
 #' }
 #' }
 #'
-#' \strong{ ParticipantAllByResearcher } \emph{ Get the set of all participants under a single researcher. }
+#' \strong{ allByResearcher } \emph{ Get the set of all participants under a single researcher. }
 #' Get the set of all participants under a single researcher.
 #'
 #' \itemize{
@@ -102,7 +102,7 @@
 #' }
 #' }
 #'
-#' \strong{ ParticipantAllByStudy } \emph{ Get the set of all participants in a single study. }
+#' \strong{ allByStudy } \emph{ Get the set of all participants in a single study. }
 #' Get the set of all participants in a single study.
 #'
 #' \itemize{
@@ -147,7 +147,7 @@
 #' }
 #' }
 #'
-#' \strong{ ParticipantCreate } \emph{ Create a new Participant for the given Study. }
+#' \strong{ create } \emph{ Create a new Participant for the given Study. }
 #' Create a new Participant for the given Study.
 #'
 #' \itemize{
@@ -192,7 +192,7 @@
 #' }
 #' }
 #'
-#' \strong{ ParticipantDelete } \emph{ Delete a participant AND all owned data or event streams. }
+#' \strong{ delete } \emph{ Delete a participant AND all owned data or event streams. }
 #' Delete a participant AND all owned data or event streams.
 #'
 #' \itemize{
@@ -236,7 +236,7 @@
 #' }
 #' }
 #'
-#' \strong{ ParticipantUpdate } \emph{ Update a Participant&#39;s settings. }
+#' \strong{ update } \emph{ Update a Participant&#39;s settings. }
 #' Update a Participant&#39;s settings.
 #'
 #' \itemize{
@@ -281,7 +281,7 @@
 #' }
 #' }
 #'
-#' \strong{ ParticipantView } \emph{ Get a single participant, by identifier. }
+#' \strong{ view } \emph{ Get a single participant, by identifier. }
 #' Get a single participant, by identifier.
 #'
 #' \itemize{
@@ -331,107 +331,68 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  ParticipantAll  ####################
+#' ####################  all  ####################
 #'
 #' library(LAMP)
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get the set of all participants.
-#' api.instance <- ParticipantApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ParticipantAll(transform=var.transform)
+#' result <- LAMP.Participant$all()
 #'
 #'
-#' ####################  ParticipantAllByResearcher  ####################
+#' ####################  allByResearcher  ####################
 #'
 #' library(LAMP)
 #' var.researcher.id <- 'researcher.id_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get the set of all participants under a single researcher.
-#' api.instance <- ParticipantApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ParticipantAllByResearcher(var.researcher.id, transform=var.transform)
+#' result <- LAMP.Participant$allByResearcher(var.researcher.id)
 #'
 #'
-#' ####################  ParticipantAllByStudy  ####################
+#' ####################  allByStudy  ####################
 #'
 #' library(LAMP)
 #' var.study.id <- 'study.id_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get the set of all participants in a single study.
-#' api.instance <- ParticipantApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ParticipantAllByStudy(var.study.id, transform=var.transform)
+#' result <- LAMP.Participant$allByStudy(var.study.id)
 #'
 #'
-#' ####################  ParticipantCreate  ####################
+#' ####################  create  ####################
 #'
 #' library(LAMP)
 #' var.study.id <- 'study.id_example' # character | 
 #' var.participant <- Participant$new() # Participant | 
 #'
 #' #Create a new Participant for the given Study.
-#' api.instance <- ParticipantApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ParticipantCreate(var.study.id, var.participant)
+#' result <- LAMP.Participant$create(var.study.id, var.participant)
 #'
 #'
-#' ####################  ParticipantDelete  ####################
+#' ####################  delete  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
 #'
 #' #Delete a participant AND all owned data or event streams.
-#' api.instance <- ParticipantApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ParticipantDelete(var.participant.id)
+#' result <- LAMP.Participant$delete(var.participant.id)
 #'
 #'
-#' ####################  ParticipantUpdate  ####################
+#' ####################  update  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
 #' var.participant <- Participant$new() # Participant | 
 #'
 #' #Update a Participant's settings.
-#' api.instance <- ParticipantApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ParticipantUpdate(var.participant.id, var.participant)
+#' result <- LAMP.Participant$update(var.participant.id, var.participant)
 #'
 #'
-#' ####################  ParticipantView  ####################
+#' ####################  view  ####################
 #'
 #' library(LAMP)
 #' var.participant.id <- 'participant.id_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get a single participant, by identifier.
-#' api.instance <- ParticipantApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ParticipantView(var.participant.id, transform=var.transform)
+#' result <- LAMP.Participant$view(var.participant.id)
 #'
 #'
 #' }
@@ -450,8 +411,8 @@ ParticipantApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    ParticipantAll = function(transform=NULL, ...){
-      apiResponse <- self$ParticipantAllWithHttpInfo(transform, ...)
+    all = function(transform=NULL, ...){
+      apiResponse <- self$allWithHttpInfo(transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -464,7 +425,7 @@ ParticipantApi <- R6::R6Class(
       }
     },
 
-    ParticipantAllWithHttpInfo = function(transform=NULL, ...){
+    allWithHttpInfo = function(transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -500,8 +461,8 @@ ParticipantApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ParticipantAllByResearcher = function(researcher.id, transform=NULL, ...){
-      apiResponse <- self$ParticipantAllByResearcherWithHttpInfo(researcher.id, transform, ...)
+    allByResearcher = function(researcher.id, transform=NULL, ...){
+      apiResponse <- self$allByResearcherWithHttpInfo(researcher.id, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -514,7 +475,7 @@ ParticipantApi <- R6::R6Class(
       }
     },
 
-    ParticipantAllByResearcherWithHttpInfo = function(researcher.id, transform=NULL, ...){
+    allByResearcherWithHttpInfo = function(researcher.id, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -558,8 +519,8 @@ ParticipantApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ParticipantAllByStudy = function(study.id, transform=NULL, ...){
-      apiResponse <- self$ParticipantAllByStudyWithHttpInfo(study.id, transform, ...)
+    allByStudy = function(study.id, transform=NULL, ...){
+      apiResponse <- self$allByStudyWithHttpInfo(study.id, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -572,7 +533,7 @@ ParticipantApi <- R6::R6Class(
       }
     },
 
-    ParticipantAllByStudyWithHttpInfo = function(study.id, transform=NULL, ...){
+    allByStudyWithHttpInfo = function(study.id, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -616,8 +577,8 @@ ParticipantApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ParticipantCreate = function(study.id, participant, ...){
-      apiResponse <- self$ParticipantCreateWithHttpInfo(study.id, participant, ...)
+    create = function(study.id, participant, ...){
+      apiResponse <- self$createWithHttpInfo(study.id, participant, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -630,7 +591,7 @@ ParticipantApi <- R6::R6Class(
       }
     },
 
-    ParticipantCreateWithHttpInfo = function(study.id, participant, ...){
+    createWithHttpInfo = function(study.id, participant, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -682,8 +643,8 @@ ParticipantApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ParticipantDelete = function(participant.id, ...){
-      apiResponse <- self$ParticipantDeleteWithHttpInfo(participant.id, ...)
+    delete = function(participant.id, ...){
+      apiResponse <- self$deleteWithHttpInfo(participant.id, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -696,7 +657,7 @@ ParticipantApi <- R6::R6Class(
       }
     },
 
-    ParticipantDeleteWithHttpInfo = function(participant.id, ...){
+    deleteWithHttpInfo = function(participant.id, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -738,8 +699,8 @@ ParticipantApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ParticipantUpdate = function(participant.id, participant, ...){
-      apiResponse <- self$ParticipantUpdateWithHttpInfo(participant.id, participant, ...)
+    update = function(participant.id, participant, ...){
+      apiResponse <- self$updateWithHttpInfo(participant.id, participant, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -752,7 +713,7 @@ ParticipantApi <- R6::R6Class(
       }
     },
 
-    ParticipantUpdateWithHttpInfo = function(participant.id, participant, ...){
+    updateWithHttpInfo = function(participant.id, participant, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -804,8 +765,8 @@ ParticipantApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ParticipantView = function(participant.id, transform=NULL, ...){
-      apiResponse <- self$ParticipantViewWithHttpInfo(participant.id, transform, ...)
+    view = function(participant.id, transform=NULL, ...){
+      apiResponse <- self$viewWithHttpInfo(participant.id, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -818,7 +779,7 @@ ParticipantApi <- R6::R6Class(
       }
     },
 
-    ParticipantViewWithHttpInfo = function(participant.id, transform=NULL, ...){
+    viewWithHttpInfo = function(participant.id, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

@@ -5,8 +5,8 @@ context("Test ParticipantApi")
 
 api.instance <- ParticipantApi$new()
 
-test_that("ParticipantAll", {
-  # tests for ParticipantAll
+test_that("all", {
+  # tests for all
   # base path: https://api.lamp.digital
   # Get the set of all participants.
   # Get the set of all participants.
@@ -17,8 +17,8 @@ test_that("ParticipantAll", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ParticipantAllByResearcher", {
-  # tests for ParticipantAllByResearcher
+test_that("allByResearcher", {
+  # tests for allByResearcher
   # base path: https://api.lamp.digital
   # Get the set of all participants under a single researcher.
   # Get the set of all participants under a single researcher.
@@ -30,8 +30,8 @@ test_that("ParticipantAllByResearcher", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ParticipantAllByStudy", {
-  # tests for ParticipantAllByStudy
+test_that("allByStudy", {
+  # tests for allByStudy
   # base path: https://api.lamp.digital
   # Get the set of all participants in a single study.
   # Get the set of all participants in a single study.
@@ -43,8 +43,8 @@ test_that("ParticipantAllByStudy", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ParticipantCreate", {
-  # tests for ParticipantCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # Create a new Participant for the given Study.
   # Create a new Participant for the given Study.
@@ -56,8 +56,8 @@ test_that("ParticipantCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ParticipantDelete", {
-  # tests for ParticipantDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # Delete a participant AND all owned data or event streams.
   # Delete a participant AND all owned data or event streams.
@@ -68,8 +68,8 @@ test_that("ParticipantDelete", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ParticipantUpdate", {
-  # tests for ParticipantUpdate
+test_that("update", {
+  # tests for update
   # base path: https://api.lamp.digital
   # Update a Participant&#39;s settings.
   # Update a Participant&#39;s settings.
@@ -81,8 +81,8 @@ test_that("ParticipantUpdate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("ParticipantView", {
-  # tests for ParticipantView
+test_that("view", {
+  # tests for view
   # base path: https://api.lamp.digital
   # Get a single participant, by identifier.
   # Get a single participant, by identifier.

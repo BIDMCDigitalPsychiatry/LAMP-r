@@ -5,8 +5,8 @@ context("Test SensorSpecApi")
 
 api.instance <- SensorSpecApi$new()
 
-test_that("SensorSpecAll", {
-  # tests for SensorSpecAll
+test_that("all", {
+  # tests for all
   # base path: https://api.lamp.digital
   # Get all SensorSpecs registered.
   # Get all SensorSpecs registered by any Researcher.
@@ -17,8 +17,8 @@ test_that("SensorSpecAll", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorSpecCreate", {
-  # tests for SensorSpecCreate
+test_that("create", {
+  # tests for create
   # base path: https://api.lamp.digital
   # Create a new SensorSpec.
   # Create a new SensorSpec.
@@ -29,8 +29,8 @@ test_that("SensorSpecCreate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorSpecDelete", {
-  # tests for SensorSpecDelete
+test_that("delete", {
+  # tests for delete
   # base path: https://api.lamp.digital
   # Delete an SensorSpec.
   # Delete an SensorSpec.
@@ -41,8 +41,8 @@ test_that("SensorSpecDelete", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorSpecUpdate", {
-  # tests for SensorSpecUpdate
+test_that("update", {
+  # tests for update
   # base path: https://api.lamp.digital
   # Update an SensorSpec.
   # Update an SensorSpec.
@@ -54,8 +54,8 @@ test_that("SensorSpecUpdate", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("SensorSpecView", {
-  # tests for SensorSpecView
+test_that("view", {
+  # tests for view
   # base path: https://api.lamp.digital
   # Get a SensorSpec.
   # Get a SensorSpec.

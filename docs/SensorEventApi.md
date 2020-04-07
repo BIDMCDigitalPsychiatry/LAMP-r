@@ -1,18 +1,16 @@
-# SensorEventApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.SensorEvent
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SensorEventAllByParticipant**](SensorEventApi.md#SensorEventAllByParticipant) | **GET** /participant/{participant_id}/sensor_event | Get all sensor events for a participant.
-[**SensorEventAllByResearcher**](SensorEventApi.md#SensorEventAllByResearcher) | **GET** /researcher/{researcher_id}/sensor_event | Get all sensor events for a researcher by participant.
-[**SensorEventAllByStudy**](SensorEventApi.md#SensorEventAllByStudy) | **GET** /study/{study_id}/sensor_event | Get all sensor events for a study by participant.
-[**SensorEventCreate**](SensorEventApi.md#SensorEventCreate) | **POST** /participant/{participant_id}/sensor_event | Create a new SensorEvent for the given Participant.
-[**SensorEventDelete**](SensorEventApi.md#SensorEventDelete) | **DELETE** /participant/{participant_id}/sensor_event | Delete a sensor event.
+[**allByParticipant**](SensorEventApi.md#allByParticipant) | **GET** /participant/{participant_id}/sensor_event | Get all sensor events for a participant.
+[**allByResearcher**](SensorEventApi.md#allByResearcher) | **GET** /researcher/{researcher_id}/sensor_event | Get all sensor events for a researcher by participant.
+[**allByStudy**](SensorEventApi.md#allByStudy) | **GET** /study/{study_id}/sensor_event | Get all sensor events for a study by participant.
+[**create**](SensorEventApi.md#create) | **POST** /participant/{participant_id}/sensor_event | Create a new SensorEvent for the given Participant.
+[**delete**](SensorEventApi.md#delete) | **DELETE** /participant/{participant_id}/sensor_event | Delete a sensor event.
 
 
-# **SensorEventAllByParticipant**
-> array[object] SensorEventAllByParticipant(participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+# **allByParticipant**
+> array[object] allByParticipant(participant.id, origin=var.origin, from=var.from, to=var.to)
 
 Get all sensor events for a participant.
 
@@ -26,13 +24,9 @@ var.participant.id <- 'participant.id_example' # character |
 var.origin <- 'origin_example' # character | 
 var.from <- 3.4 # numeric | 
 var.to <- 3.4 # numeric | 
-var.transform <- 'transform_example' # character | 
 
 #Get all sensor events for a participant.
-api.instance <- SensorEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorEventAllByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+result <- LAMP.SensorEvent$allByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to)
 dput(result)
 ```
 
@@ -50,14 +44,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -68,8 +58,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorEventAllByResearcher**
-> array[object] SensorEventAllByResearcher(researcher.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+# **allByResearcher**
+> array[object] allByResearcher(researcher.id, origin=var.origin, from=var.from, to=var.to)
 
 Get all sensor events for a researcher by participant.
 
@@ -83,13 +73,9 @@ var.researcher.id <- 'researcher.id_example' # character |
 var.origin <- 'origin_example' # character | 
 var.from <- 3.4 # numeric | 
 var.to <- 3.4 # numeric | 
-var.transform <- 'transform_example' # character | 
 
 #Get all sensor events for a researcher by participant.
-api.instance <- SensorEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorEventAllByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+result <- LAMP.SensorEvent$allByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to)
 dput(result)
 ```
 
@@ -107,14 +93,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -125,8 +107,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorEventAllByStudy**
-> array[object] SensorEventAllByStudy(study.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+# **allByStudy**
+> array[object] allByStudy(study.id, origin=var.origin, from=var.from, to=var.to)
 
 Get all sensor events for a study by participant.
 
@@ -140,13 +122,9 @@ var.study.id <- 'study.id_example' # character |
 var.origin <- 'origin_example' # character | 
 var.from <- 3.4 # numeric | 
 var.to <- 3.4 # numeric | 
-var.transform <- 'transform_example' # character | 
 
 #Get all sensor events for a study by participant.
-api.instance <- SensorEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorEventAllByStudy(var.study.id, origin=var.origin, from=var.from, to=var.to, transform=var.transform)
+result <- LAMP.SensorEvent$allByStudy(var.study.id, origin=var.origin, from=var.from, to=var.to)
 dput(result)
 ```
 
@@ -164,14 +142,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -182,8 +156,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorEventCreate**
-> character SensorEventCreate(participant.id, sensor.event)
+# **create**
+> character create(participant.id, sensor.event)
 
 Create a new SensorEvent for the given Participant.
 
@@ -197,10 +171,7 @@ var.participant.id <- 'participant.id_example' # character |
 var.sensor.event <- SensorEvent$new(123, "sensor_example", 123) # SensorEvent | 
 
 #Create a new SensorEvent for the given Participant.
-api.instance <- SensorEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorEventCreate(var.participant.id, var.sensor.event)
+result <- LAMP.SensorEvent$create(var.participant.id, var.sensor.event)
 dput(result)
 ```
 
@@ -215,14 +186,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -233,8 +200,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **SensorEventDelete**
-> character SensorEventDelete(participant.id, origin=var.origin, from=var.from, to=var.to)
+# **delete**
+> character delete(participant.id, origin=var.origin, from=var.from, to=var.to)
 
 Delete a sensor event.
 
@@ -250,10 +217,7 @@ var.from <- 3.4 # numeric |
 var.to <- 3.4 # numeric | 
 
 #Delete a sensor event.
-api.instance <- SensorEventApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$SensorEventDelete(var.participant.id, origin=var.origin, from=var.from, to=var.to)
+result <- LAMP.SensorEvent$delete(var.participant.id, origin=var.origin, from=var.from, to=var.to)
 dput(result)
 ```
 
@@ -270,14 +234,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

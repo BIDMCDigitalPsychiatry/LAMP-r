@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ ResearcherAll } \emph{ Get the set of all researchers. }
+#' \strong{ all } \emph{ Get the set of all researchers. }
 #' Get the set of all researchers.
 #'
 #' \itemize{
@@ -57,7 +57,7 @@
 #' }
 #' }
 #'
-#' \strong{ ResearcherCreate } \emph{ Create a new Researcher. }
+#' \strong{ create } \emph{ Create a new Researcher. }
 #' Create a new Researcher.
 #'
 #' \itemize{
@@ -101,7 +101,7 @@
 #' }
 #' }
 #'
-#' \strong{ ResearcherDelete } \emph{ Delete a researcher. }
+#' \strong{ delete } \emph{ Delete a researcher. }
 #' Delete a researcher.
 #'
 #' \itemize{
@@ -145,7 +145,7 @@
 #' }
 #' }
 #'
-#' \strong{ ResearcherUpdate } \emph{ Update a Researcher&#39;s settings. }
+#' \strong{ update } \emph{ Update a Researcher&#39;s settings. }
 #' Update a Researcher&#39;s settings.
 #'
 #' \itemize{
@@ -191,7 +191,7 @@
 #' }
 #' }
 #'
-#' \strong{ ResearcherView } \emph{ Get a single researcher, by identifier. }
+#' \strong{ view } \emph{ Get a single researcher, by identifier. }
 #' Get a single researcher, by identifier.
 #'
 #' \itemize{
@@ -241,77 +241,49 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  ResearcherAll  ####################
+#' ####################  all  ####################
 #'
 #' library(LAMP)
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get the set of all researchers.
-#' api.instance <- ResearcherApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ResearcherAll(transform=var.transform)
+#' result <- LAMP.Researcher$all()
 #'
 #'
-#' ####################  ResearcherCreate  ####################
+#' ####################  create  ####################
 #'
 #' library(LAMP)
 #' var.researcher <- Researcher$new() # Researcher | 
 #'
 #' #Create a new Researcher.
-#' api.instance <- ResearcherApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ResearcherCreate(var.researcher)
+#' result <- LAMP.Researcher$create(var.researcher)
 #'
 #'
-#' ####################  ResearcherDelete  ####################
+#' ####################  delete  ####################
 #'
 #' library(LAMP)
 #' var.researcher.id <- 'researcher.id_example' # character | 
 #'
 #' #Delete a researcher.
-#' api.instance <- ResearcherApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ResearcherDelete(var.researcher.id)
+#' result <- LAMP.Researcher$delete(var.researcher.id)
 #'
 #'
-#' ####################  ResearcherUpdate  ####################
+#' ####################  update  ####################
 #'
 #' library(LAMP)
 #' var.researcher.id <- 'researcher.id_example' # character | 
 #' var.researcher <- Researcher$new() # Researcher | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Update a Researcher's settings.
-#' api.instance <- ResearcherApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ResearcherUpdate(var.researcher.id, var.researcher, transform=var.transform)
+#' result <- LAMP.Researcher$update(var.researcher.id, var.researcher)
 #'
 #'
-#' ####################  ResearcherView  ####################
+#' ####################  view  ####################
 #'
 #' library(LAMP)
 #' var.researcher.id <- 'researcher.id_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get a single researcher, by identifier.
-#' api.instance <- ResearcherApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ResearcherView(var.researcher.id, transform=var.transform)
+#' result <- LAMP.Researcher$view(var.researcher.id)
 #'
 #'
 #' }
@@ -330,8 +302,8 @@ ResearcherApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    ResearcherAll = function(transform=NULL, ...){
-      apiResponse <- self$ResearcherAllWithHttpInfo(transform, ...)
+    all = function(transform=NULL, ...){
+      apiResponse <- self$allWithHttpInfo(transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -344,7 +316,7 @@ ResearcherApi <- R6::R6Class(
       }
     },
 
-    ResearcherAllWithHttpInfo = function(transform=NULL, ...){
+    allWithHttpInfo = function(transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -380,8 +352,8 @@ ResearcherApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ResearcherCreate = function(researcher, ...){
-      apiResponse <- self$ResearcherCreateWithHttpInfo(researcher, ...)
+    create = function(researcher, ...){
+      apiResponse <- self$createWithHttpInfo(researcher, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -394,7 +366,7 @@ ResearcherApi <- R6::R6Class(
       }
     },
 
-    ResearcherCreateWithHttpInfo = function(researcher, ...){
+    createWithHttpInfo = function(researcher, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -438,8 +410,8 @@ ResearcherApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ResearcherDelete = function(researcher.id, ...){
-      apiResponse <- self$ResearcherDeleteWithHttpInfo(researcher.id, ...)
+    delete = function(researcher.id, ...){
+      apiResponse <- self$deleteWithHttpInfo(researcher.id, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -452,7 +424,7 @@ ResearcherApi <- R6::R6Class(
       }
     },
 
-    ResearcherDeleteWithHttpInfo = function(researcher.id, ...){
+    deleteWithHttpInfo = function(researcher.id, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -494,8 +466,8 @@ ResearcherApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ResearcherUpdate = function(researcher.id, researcher, transform=NULL, ...){
-      apiResponse <- self$ResearcherUpdateWithHttpInfo(researcher.id, researcher, transform, ...)
+    update = function(researcher.id, researcher, transform=NULL, ...){
+      apiResponse <- self$updateWithHttpInfo(researcher.id, researcher, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -508,7 +480,7 @@ ResearcherApi <- R6::R6Class(
       }
     },
 
-    ResearcherUpdateWithHttpInfo = function(researcher.id, researcher, transform=NULL, ...){
+    updateWithHttpInfo = function(researcher.id, researcher, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -562,8 +534,8 @@ ResearcherApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ResearcherView = function(researcher.id, transform=NULL, ...){
-      apiResponse <- self$ResearcherViewWithHttpInfo(researcher.id, transform, ...)
+    view = function(researcher.id, transform=NULL, ...){
+      apiResponse <- self$viewWithHttpInfo(researcher.id, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -576,7 +548,7 @@ ResearcherApi <- R6::R6Class(
       }
     },
 
-    ResearcherViewWithHttpInfo = function(researcher.id, transform=NULL, ...){
+    viewWithHttpInfo = function(researcher.id, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

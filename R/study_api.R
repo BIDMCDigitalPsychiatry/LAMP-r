@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ StudyAll } \emph{ Get the set of all studies. }
+#' \strong{ all } \emph{ Get the set of all studies. }
 #' Get the set of all studies.
 #'
 #' \itemize{
@@ -57,7 +57,7 @@
 #' }
 #' }
 #'
-#' \strong{ StudyAllByResearcher } \emph{ Get the set of studies for a single researcher. }
+#' \strong{ allByResearcher } \emph{ Get the set of studies for a single researcher. }
 #' Get the set of studies for a single researcher.
 #'
 #' \itemize{
@@ -102,7 +102,7 @@
 #' }
 #' }
 #'
-#' \strong{ StudyCreate } \emph{ Create a new Study for the given Researcher. }
+#' \strong{ create } \emph{ Create a new Study for the given Researcher. }
 #' Create a new Study for the given Researcher.
 #'
 #' \itemize{
@@ -147,7 +147,7 @@
 #' }
 #' }
 #'
-#' \strong{ StudyDelete } \emph{ Delete a study. }
+#' \strong{ delete } \emph{ Delete a study. }
 #' Delete a study.
 #'
 #' \itemize{
@@ -191,7 +191,7 @@
 #' }
 #' }
 #'
-#' \strong{ StudyUpdate } \emph{ Update the study. }
+#' \strong{ update } \emph{ Update the study. }
 #' Update the study.
 #'
 #' \itemize{
@@ -236,7 +236,7 @@
 #' }
 #' }
 #'
-#' \strong{ StudyView } \emph{ Get a single study, by identifier. }
+#' \strong{ view } \emph{ Get a single study, by identifier. }
 #' Get a single study, by identifier.
 #'
 #' \itemize{
@@ -286,92 +286,59 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  StudyAll  ####################
+#' ####################  all  ####################
 #'
 #' library(LAMP)
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get the set of all studies.
-#' api.instance <- StudyApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$StudyAll(transform=var.transform)
+#' result <- LAMP.Study$all()
 #'
 #'
-#' ####################  StudyAllByResearcher  ####################
+#' ####################  allByResearcher  ####################
 #'
 #' library(LAMP)
 #' var.researcher.id <- 'researcher.id_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get the set of studies for a single researcher.
-#' api.instance <- StudyApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$StudyAllByResearcher(var.researcher.id, transform=var.transform)
+#' result <- LAMP.Study$allByResearcher(var.researcher.id)
 #'
 #'
-#' ####################  StudyCreate  ####################
+#' ####################  create  ####################
 #'
 #' library(LAMP)
 #' var.researcher.id <- 'researcher.id_example' # character | 
 #' var.study <- Study$new() # Study | 
 #'
 #' #Create a new Study for the given Researcher.
-#' api.instance <- StudyApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$StudyCreate(var.researcher.id, var.study)
+#' result <- LAMP.Study$create(var.researcher.id, var.study)
 #'
 #'
-#' ####################  StudyDelete  ####################
+#' ####################  delete  ####################
 #'
 #' library(LAMP)
 #' var.study.id <- 'study.id_example' # character | 
 #'
 #' #Delete a study.
-#' api.instance <- StudyApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$StudyDelete(var.study.id)
+#' result <- LAMP.Study$delete(var.study.id)
 #'
 #'
-#' ####################  StudyUpdate  ####################
+#' ####################  update  ####################
 #'
 #' library(LAMP)
 #' var.study.id <- 'study.id_example' # character | 
 #' var.study <- Study$new() # Study | 
 #'
 #' #Update the study.
-#' api.instance <- StudyApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$StudyUpdate(var.study.id, var.study)
+#' result <- LAMP.Study$update(var.study.id, var.study)
 #'
 #'
-#' ####################  StudyView  ####################
+#' ####################  view  ####################
 #'
 #' library(LAMP)
 #' var.study.id <- 'study.id_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get a single study, by identifier.
-#' api.instance <- StudyApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$StudyView(var.study.id, transform=var.transform)
+#' result <- LAMP.Study$view(var.study.id)
 #'
 #'
 #' }
@@ -390,8 +357,8 @@ StudyApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    StudyAll = function(transform=NULL, ...){
-      apiResponse <- self$StudyAllWithHttpInfo(transform, ...)
+    all = function(transform=NULL, ...){
+      apiResponse <- self$allWithHttpInfo(transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -404,7 +371,7 @@ StudyApi <- R6::R6Class(
       }
     },
 
-    StudyAllWithHttpInfo = function(transform=NULL, ...){
+    allWithHttpInfo = function(transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -440,8 +407,8 @@ StudyApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    StudyAllByResearcher = function(researcher.id, transform=NULL, ...){
-      apiResponse <- self$StudyAllByResearcherWithHttpInfo(researcher.id, transform, ...)
+    allByResearcher = function(researcher.id, transform=NULL, ...){
+      apiResponse <- self$allByResearcherWithHttpInfo(researcher.id, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -454,7 +421,7 @@ StudyApi <- R6::R6Class(
       }
     },
 
-    StudyAllByResearcherWithHttpInfo = function(researcher.id, transform=NULL, ...){
+    allByResearcherWithHttpInfo = function(researcher.id, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -498,8 +465,8 @@ StudyApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    StudyCreate = function(researcher.id, study, ...){
-      apiResponse <- self$StudyCreateWithHttpInfo(researcher.id, study, ...)
+    create = function(researcher.id, study, ...){
+      apiResponse <- self$createWithHttpInfo(researcher.id, study, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -512,7 +479,7 @@ StudyApi <- R6::R6Class(
       }
     },
 
-    StudyCreateWithHttpInfo = function(researcher.id, study, ...){
+    createWithHttpInfo = function(researcher.id, study, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -564,8 +531,8 @@ StudyApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    StudyDelete = function(study.id, ...){
-      apiResponse <- self$StudyDeleteWithHttpInfo(study.id, ...)
+    delete = function(study.id, ...){
+      apiResponse <- self$deleteWithHttpInfo(study.id, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -578,7 +545,7 @@ StudyApi <- R6::R6Class(
       }
     },
 
-    StudyDeleteWithHttpInfo = function(study.id, ...){
+    deleteWithHttpInfo = function(study.id, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -620,8 +587,8 @@ StudyApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    StudyUpdate = function(study.id, study, ...){
-      apiResponse <- self$StudyUpdateWithHttpInfo(study.id, study, ...)
+    update = function(study.id, study, ...){
+      apiResponse <- self$updateWithHttpInfo(study.id, study, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -634,7 +601,7 @@ StudyApi <- R6::R6Class(
       }
     },
 
-    StudyUpdateWithHttpInfo = function(study.id, study, ...){
+    updateWithHttpInfo = function(study.id, study, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -686,8 +653,8 @@ StudyApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    StudyView = function(study.id, transform=NULL, ...){
-      apiResponse <- self$StudyViewWithHttpInfo(study.id, transform, ...)
+    view = function(study.id, transform=NULL, ...){
+      apiResponse <- self$viewWithHttpInfo(study.id, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -700,7 +667,7 @@ StudyApi <- R6::R6Class(
       }
     },
 
-    StudyViewWithHttpInfo = function(study.id, transform=NULL, ...){
+    viewWithHttpInfo = function(study.id, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()

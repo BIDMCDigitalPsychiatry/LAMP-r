@@ -5,8 +5,8 @@ context("Test TypeApi")
 
 api.instance <- TypeApi$new()
 
-test_that("TypeGetAttachment", {
-  # tests for TypeGetAttachment
+test_that("getAttachment", {
+  # tests for getAttachment
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @param character  attachment.key   
@@ -16,8 +16,8 @@ test_that("TypeGetAttachment", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("TypeGetDynamicAttachment", {
-  # tests for TypeGetDynamicAttachment
+test_that("getDynamicAttachment", {
+  # tests for getDynamicAttachment
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @param character  attachment.key   
@@ -30,8 +30,8 @@ test_that("TypeGetDynamicAttachment", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("TypeListAttachments", {
-  # tests for TypeListAttachments
+test_that("listAttachments", {
+  # tests for listAttachments
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @return [object]
@@ -40,8 +40,8 @@ test_that("TypeListAttachments", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("TypeParent", {
-  # tests for TypeParent
+test_that("parent", {
+  # tests for parent
   # base path: https://api.lamp.digital
   # Find the owner(s) of the resource.
   # Get the parent type identifier of the data structure referenced by the identifier.
@@ -53,8 +53,8 @@ test_that("TypeParent", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("TypeSetAttachment", {
-  # tests for TypeSetAttachment
+test_that("setAttachment", {
+  # tests for setAttachment
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @param character  target   
@@ -66,8 +66,8 @@ test_that("TypeSetAttachment", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("TypeSetDynamicAttachment", {
-  # tests for TypeSetDynamicAttachment
+test_that("setDynamicAttachment", {
+  # tests for setDynamicAttachment
   # base path: https://api.lamp.digital
   # @param character  type.id   
   # @param character  target   

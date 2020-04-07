@@ -1,18 +1,16 @@
-# ResearcherApi
-
-All URIs are relative to *https://api.lamp.digital*
+# LAMP.Researcher
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ResearcherAll**](ResearcherApi.md#ResearcherAll) | **GET** /researcher | Get the set of all researchers.
-[**ResearcherCreate**](ResearcherApi.md#ResearcherCreate) | **POST** /researcher | Create a new Researcher.
-[**ResearcherDelete**](ResearcherApi.md#ResearcherDelete) | **DELETE** /researcher/{researcher_id} | Delete a researcher.
-[**ResearcherUpdate**](ResearcherApi.md#ResearcherUpdate) | **PUT** /researcher/{researcher_id} | Update a Researcher&#39;s settings.
-[**ResearcherView**](ResearcherApi.md#ResearcherView) | **GET** /researcher/{researcher_id} | Get a single researcher, by identifier.
+[**all**](ResearcherApi.md#all) | **GET** /researcher | Get the set of all researchers.
+[**create**](ResearcherApi.md#create) | **POST** /researcher | Create a new Researcher.
+[**delete**](ResearcherApi.md#delete) | **DELETE** /researcher/{researcher_id} | Delete a researcher.
+[**update**](ResearcherApi.md#update) | **PUT** /researcher/{researcher_id} | Update a Researcher&#39;s settings.
+[**view**](ResearcherApi.md#view) | **GET** /researcher/{researcher_id} | Get a single researcher, by identifier.
 
 
-# **ResearcherAll**
-> array[object] ResearcherAll(transform=var.transform)
+# **all**
+> array[object] all()
 
 Get the set of all researchers.
 
@@ -22,13 +20,8 @@ Get the set of all researchers.
 ```R
 library(LAMP)
 
-var.transform <- 'transform_example' # character | 
-
 #Get the set of all researchers.
-api.instance <- ResearcherApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ResearcherAll(transform=var.transform)
+result <- LAMP.Researcher$all()
 dput(result)
 ```
 
@@ -42,14 +35,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -60,8 +49,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ResearcherCreate**
-> character ResearcherCreate(researcher)
+# **create**
+> character create(researcher)
 
 Create a new Researcher.
 
@@ -74,10 +63,7 @@ library(LAMP)
 var.researcher <- Researcher$new("id_example", "name_example", "email_example", "address_example", list(123)) # Researcher | 
 
 #Create a new Researcher.
-api.instance <- ResearcherApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ResearcherCreate(var.researcher)
+result <- LAMP.Researcher$create(var.researcher)
 dput(result)
 ```
 
@@ -91,14 +77,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -109,8 +91,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ResearcherDelete**
-> character ResearcherDelete(researcher.id)
+# **delete**
+> character delete(researcher.id)
 
 Delete a researcher.
 
@@ -123,10 +105,7 @@ library(LAMP)
 var.researcher.id <- 'researcher.id_example' # character | 
 
 #Delete a researcher.
-api.instance <- ResearcherApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ResearcherDelete(var.researcher.id)
+result <- LAMP.Researcher$delete(var.researcher.id)
 dput(result)
 ```
 
@@ -140,14 +119,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -158,8 +133,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ResearcherUpdate**
-> character ResearcherUpdate(researcher.id, researcher, transform=var.transform)
+# **update**
+> character update(researcher.id, researcher)
 
 Update a Researcher's settings.
 
@@ -171,13 +146,9 @@ library(LAMP)
 
 var.researcher.id <- 'researcher.id_example' # character | 
 var.researcher <- Researcher$new("id_example", "name_example", "email_example", "address_example", list(123)) # Researcher | 
-var.transform <- 'transform_example' # character | 
 
 #Update a Researcher's settings.
-api.instance <- ResearcherApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ResearcherUpdate(var.researcher.id, var.researcher, transform=var.transform)
+result <- LAMP.Researcher$update(var.researcher.id, var.researcher)
 dput(result)
 ```
 
@@ -193,14 +164,10 @@ Name | Type | Description  | Notes
 
 **character**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -211,8 +178,8 @@ Name | Type | Description  | Notes
 | **404** | 404 Not Found |  -  |
 | **0** | 500 Internal Error |  -  |
 
-# **ResearcherView**
-> array[object] ResearcherView(researcher.id, transform=var.transform)
+# **view**
+> array[object] view(researcher.id)
 
 Get a single researcher, by identifier.
 
@@ -223,13 +190,9 @@ Get a single researcher, by identifier.
 library(LAMP)
 
 var.researcher.id <- 'researcher.id_example' # character | 
-var.transform <- 'transform_example' # character | 
 
 #Get a single researcher, by identifier.
-api.instance <- ResearcherApi$new()
-# Configure API key authorization: Authorization
-api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-result <- api.instance$ResearcherView(var.researcher.id, transform=var.transform)
+result <- LAMP.Researcher$view(var.researcher.id)
 dput(result)
 ```
 
@@ -244,14 +207,10 @@ Name | Type | Description  | Notes
 
 **array[object]**
 
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: `application/json`
+ - **Accept**: `application/json`
 
 ### HTTP response details
 | Status code | Description | Response headers |

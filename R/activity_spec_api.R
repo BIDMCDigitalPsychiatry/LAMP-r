@@ -13,7 +13,7 @@
 #'
 #' @section Methods:
 #' \describe{
-#' \strong{ ActivitySpecAll } \emph{ Get all ActivitySpecs registered. }
+#' \strong{ all } \emph{ Get all ActivitySpecs registered. }
 #' Get all ActivitySpecs registered.
 #'
 #' \itemize{
@@ -57,7 +57,7 @@
 #' }
 #' }
 #'
-#' \strong{ ActivitySpecCreate } \emph{ Create a new ActivitySpec. }
+#' \strong{ create } \emph{ Create a new ActivitySpec. }
 #' Create a new ActivitySpec.
 #'
 #' \itemize{
@@ -101,7 +101,7 @@
 #' }
 #' }
 #'
-#' \strong{ ActivitySpecDelete } \emph{ Delete an ActivitySpec. }
+#' \strong{ delete } \emph{ Delete an ActivitySpec. }
 #' Delete an ActivitySpec.
 #'
 #' \itemize{
@@ -145,7 +145,7 @@
 #' }
 #' }
 #'
-#' \strong{ ActivitySpecUpdate } \emph{ Update an ActivitySpec. }
+#' \strong{ update } \emph{ Update an ActivitySpec. }
 #' Update an ActivitySpec.
 #'
 #' \itemize{
@@ -190,7 +190,7 @@
 #' }
 #' }
 #'
-#' \strong{ ActivitySpecView } \emph{ View an ActivitySpec. }
+#' \strong{ view } \emph{ View an ActivitySpec. }
 #' View an ActivitySpec.
 #'
 #' \itemize{
@@ -240,76 +240,49 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  ActivitySpecAll  ####################
+#' ####################  all  ####################
 #'
 #' library(LAMP)
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #Get all ActivitySpecs registered.
-#' api.instance <- ActivitySpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivitySpecAll(transform=var.transform)
+#' result <- LAMP.ActivitySpec$all()
 #'
 #'
-#' ####################  ActivitySpecCreate  ####################
+#' ####################  create  ####################
 #'
 #' library(LAMP)
 #' var.activity.spec <- ActivitySpec$new() # ActivitySpec | 
 #'
 #' #Create a new ActivitySpec.
-#' api.instance <- ActivitySpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivitySpecCreate(var.activity.spec)
+#' result <- LAMP.ActivitySpec$create(var.activity.spec)
 #'
 #'
-#' ####################  ActivitySpecDelete  ####################
+#' ####################  delete  ####################
 #'
 #' library(LAMP)
 #' var.activity.spec.name <- 'activity.spec.name_example' # character | 
 #'
 #' #Delete an ActivitySpec.
-#' api.instance <- ActivitySpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivitySpecDelete(var.activity.spec.name)
+#' result <- LAMP.ActivitySpec$delete(var.activity.spec.name)
 #'
 #'
-#' ####################  ActivitySpecUpdate  ####################
+#' ####################  update  ####################
 #'
 #' library(LAMP)
 #' var.activity.spec.name <- 'activity.spec.name_example' # character | 
 #' var.activity.spec <- ActivitySpec$new() # ActivitySpec | 
 #'
 #' #Update an ActivitySpec.
-#' api.instance <- ActivitySpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivitySpecUpdate(var.activity.spec.name, var.activity.spec)
+#' result <- LAMP.ActivitySpec$update(var.activity.spec.name, var.activity.spec)
 #'
 #'
-#' ####################  ActivitySpecView  ####################
+#' ####################  view  ####################
 #'
 #' library(LAMP)
 #' var.activity.spec.name <- 'activity.spec.name_example' # character | 
-#' var.transform <- 'transform_example' # character | 
 #'
 #' #View an ActivitySpec.
-#' api.instance <- ActivitySpecApi$new()
-#'
-#' #Configure API key authorization: Authorization
-#' api.instance$apiClient$apiKeys['Authorization'] <- 'TODO_YOUR_API_KEY';
-#'
-#' result <- api.instance$ActivitySpecView(var.activity.spec.name, transform=var.transform)
+#' result <- LAMP.ActivitySpec$view(var.activity.spec.name)
 #'
 #'
 #' }
@@ -328,8 +301,8 @@ ActivitySpecApi <- R6::R6Class(
         self$apiClient <- ApiClient$new()
       }
     },
-    ActivitySpecAll = function(transform=NULL, ...){
-      apiResponse <- self$ActivitySpecAllWithHttpInfo(transform, ...)
+    all = function(transform=NULL, ...){
+      apiResponse <- self$allWithHttpInfo(transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -342,7 +315,7 @@ ActivitySpecApi <- R6::R6Class(
       }
     },
 
-    ActivitySpecAllWithHttpInfo = function(transform=NULL, ...){
+    allWithHttpInfo = function(transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -378,8 +351,8 @@ ActivitySpecApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ActivitySpecCreate = function(activity.spec, ...){
-      apiResponse <- self$ActivitySpecCreateWithHttpInfo(activity.spec, ...)
+    create = function(activity.spec, ...){
+      apiResponse <- self$createWithHttpInfo(activity.spec, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -392,7 +365,7 @@ ActivitySpecApi <- R6::R6Class(
       }
     },
 
-    ActivitySpecCreateWithHttpInfo = function(activity.spec, ...){
+    createWithHttpInfo = function(activity.spec, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -436,8 +409,8 @@ ActivitySpecApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ActivitySpecDelete = function(activity.spec.name, ...){
-      apiResponse <- self$ActivitySpecDeleteWithHttpInfo(activity.spec.name, ...)
+    delete = function(activity.spec.name, ...){
+      apiResponse <- self$deleteWithHttpInfo(activity.spec.name, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -450,7 +423,7 @@ ActivitySpecApi <- R6::R6Class(
       }
     },
 
-    ActivitySpecDeleteWithHttpInfo = function(activity.spec.name, ...){
+    deleteWithHttpInfo = function(activity.spec.name, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -492,8 +465,8 @@ ActivitySpecApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ActivitySpecUpdate = function(activity.spec.name, activity.spec, ...){
-      apiResponse <- self$ActivitySpecUpdateWithHttpInfo(activity.spec.name, activity.spec, ...)
+    update = function(activity.spec.name, activity.spec, ...){
+      apiResponse <- self$updateWithHttpInfo(activity.spec.name, activity.spec, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -506,7 +479,7 @@ ActivitySpecApi <- R6::R6Class(
       }
     },
 
-    ActivitySpecUpdateWithHttpInfo = function(activity.spec.name, activity.spec, ...){
+    updateWithHttpInfo = function(activity.spec.name, activity.spec, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
@@ -558,8 +531,8 @@ ActivitySpecApi <- R6::R6Class(
         ApiResponse$new("API server error", resp)
       }
     },
-    ActivitySpecView = function(activity.spec.name, transform=NULL, ...){
-      apiResponse <- self$ActivitySpecViewWithHttpInfo(activity.spec.name, transform, ...)
+    view = function(activity.spec.name, transform=NULL, ...){
+      apiResponse <- self$viewWithHttpInfo(activity.spec.name, transform, ...)
       resp <- apiResponse$response
       if (httr::status_code(resp) >= 200 && httr::status_code(resp) <= 299) {
         apiResponse$content
@@ -572,7 +545,7 @@ ActivitySpecApi <- R6::R6Class(
       }
     },
 
-    ActivitySpecViewWithHttpInfo = function(activity.spec.name, transform=NULL, ...){
+    viewWithHttpInfo = function(activity.spec.name, transform=NULL, ...){
       args <- list(...)
       queryParams <- list()
       headerParams <- c()
