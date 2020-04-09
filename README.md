@@ -10,15 +10,7 @@ This API client is used to connect to the LAMP Platform from the R programming l
 Install the dependencies and use the `devtools` package to install this repository.
 
 ```R
-install.packages("jsonlite")
-install.packages("httr")
-install.packages("caTools")
 install.packages("devtools")
-library(devtools)
-```
-
-### Installation
-```R
 devtools::install_github("BIDMCDigitalPsychiatry/LAMP-r")
 ```
 
@@ -27,7 +19,7 @@ devtools::install_github("BIDMCDigitalPsychiatry/LAMP-r")
 Ensure your `server_address` is set correctly. If using the default server, it will be `api.lamp.digital`. Keep your `access_key` (sometimes an email address) and `secret_key` (sometimes a password) private and do not share them with others.
 ```R
 library(LAMP)
-LAMP_connect(server_address, access_key, secret_key)
+LAMP.connect(server_address, access_key, secret_key)
 ```
 
 ## API Endpoints

@@ -1,6 +1,6 @@
 # Initiate LAMP API with a root URL and auth info:
 #' @export
-LAMP_connect <- function(root_url, username, password) {
+LAMP.connect <- function(root_url, username, password) {
   LAMP <<- ApiClient$new(root_url, defaultHeaders=c(Authorization = paste('Basic', paste(username, password, sep = ':'))))
   LAMP.API <<- APIApi$new(LAMP)
   LAMP.Type <<- TypeApi$new(LAMP)

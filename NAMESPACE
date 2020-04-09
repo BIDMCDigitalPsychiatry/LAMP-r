@@ -43,4 +43,4 @@ export(StudyApi)
 export(TypeApi)
 
 # Connector
-export(LAMP_connect)
+export(LAMP.connect)
