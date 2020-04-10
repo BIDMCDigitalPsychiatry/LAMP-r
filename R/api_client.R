@@ -116,7 +116,10 @@ ApiClient  <- R6::R6Class(
     # Deserialize the content of api response to the given type.
     deserialize = function(resp, returnType, pkgEnv) {
       respObj <- jsonlite::fromJSON(httr::content(resp, "text", encoding = "UTF-8"))
-      self$deserializeObj(respObj, returnType, pkgEnv)
+      respObj$data
+      
+      # This deserialization yields a NULL object
+      #self$deserializeObj(respObj, returnType, pkgEnv)
     },
 
 
