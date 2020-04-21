@@ -1,5 +1,5 @@
 Package: LAMP
-Title: R Package Client for LAMP Platform
+Title: API Client for LAMP Platform
 Version: 1.0.0
 Authors@R: person("Division of Digital Psychiatry at Beth Israel Deaconess Medical Center.", email = "team@digitalpsych.org", role = c("aut", "cre"))
 Description: The LAMP Platform API.
@@ -10,5 +10,5 @@ Encoding: UTF-8
 License: Unlicense
 LazyData: true
 Suggests: testthat
-Imports: jsonlite, httr, R6, caTools, rlang (>= 0.4.1)
+Imports: jsonlite, httr, R6, caTools
 RoxygenNote: 6.0.1.9000
