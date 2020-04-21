@@ -263,7 +263,10 @@
 #' var.to <- 3.4 # numeric | 
 #'
 #' #Get all sensor events for a participant.
-#' result <- LAMP.SensorEvent$allByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to)
+#'result <- LAMP.SensorEvent$allByParticipant(var.participant.id, 
+#'                                            origin=var.origin, 
+#'                                            from=var.from, 
+#'                                            to=var.to)
 #'
 #'
 #' ####################  allByResearcher  ####################
@@ -275,7 +278,10 @@
 #' var.to <- 3.4 # numeric | 
 #'
 #' #Get all sensor events for a researcher by participant.
-#' result <- LAMP.SensorEvent$allByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to)
+#'result <- LAMP.SensorEvent$allByResearcher(var.researcher.id, 
+#'                                           origin=var.origin, 
+#'                                           from=var.from, 
+#'                                           to=var.to)
 #'
 #'
 #' ####################  allByStudy  ####################

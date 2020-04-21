@@ -264,7 +264,10 @@
 #' var.to <- 3.4 # numeric | 
 #'
 #' #Get all activity events for a participant.
-#' result <- LAMP.ActivityEvent$allByParticipant(var.participant.id, origin=var.origin, from=var.from, to=var.to)
+#'result <- LAMP.ActivityEvent$allByParticipant(var.participant.id, 
+#'                                              origin=var.origin, 
+#'                                              from=var.from, 
+#'                                              to=var.to)
 #'
 #'
 #' ####################  allByResearcher  ####################
@@ -276,8 +279,10 @@
 #' var.to <- 3.4 # numeric | 
 #'
 #' #Get all activity events for a researcher by participant.
-#' result <- LAMP.ActivityEvent$allByResearcher(var.researcher.id, origin=var.origin, from=var.from, to=var.to)
-#'
+#'result <- LAMP.ActivityEvent$allByResearcher(var.participant.id, 
+#'                                             origin=var.origin, 
+#'                                             from=var.from, 
+#'                                             to=var.to)
 #'
 #' ####################  allByStudy  ####################
 #'
