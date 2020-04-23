@@ -11,7 +11,10 @@ Authors@R: c(person("Phil",
                     role = c("aut")),
              person("Division of Digital Psychiatry at Beth Israel Deaconess Medical Center", 
                     role = c("cph")))
-Description: An interface for connecting with the LAMP Platform API.
+Description: A convenient interface for connecting with the LAMP Platform API. 
+             The LAMP Platform is a measurement-based care platform for clinicans and 
+             researchers <https://www.digitalpsych.org/lamp.html>. Use of the platform
+             has been previously published on <https://doi.org/10.1007/s41347-019-00095-w>.
 URL: https://github.com/BIDMCDigitalPsychiatry/LAMP-r
 BugReports: https://github.com/BIDMCDigitalPsychiatry/LAMP-r/issues
 Depends: R (>= 3.3)
