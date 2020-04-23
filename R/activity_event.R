@@ -15,8 +15,6 @@
 #'
 #' @field activity  character [optional]
 #'
-#' @field data  \link{object} [optional]
-#'
 #' @field temporal_slices  list( object ) [optional]
 #'
 #'

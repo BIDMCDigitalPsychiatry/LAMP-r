@@ -313,7 +313,11 @@
 #' var.include.logs <- 'include.logs_example' # character | 
 #' var.ignore.output <- 'ignore.output_example' # character | 
 #'
-#' result <- LAMP.Type$getDynamicAttachment(var.type.id, var.attachment.key, var.invoke.always, var.include.logs, var.ignore.output)
+#'result <- LAMP.Type$getDynamicAttachment(var.type.id, 
+#'                                         var.attachment.key, 
+#'                                         var.invoke.always, 
+#'                                         var.include.logs, 
+#'                                         var.ignore.output)
 #'
 #'
 #' ####################  listAttachments  ####################
@@ -353,7 +357,11 @@
 #' var.invoke.once <- 'invoke.once_example' # character | 
 #' var.dynamic.attachment <- DynamicAttachment$new() # DynamicAttachment | 
 #'
-#' result <- LAMP.Type$setDynamicAttachment(var.type.id, var.target, var.attachment.key, var.invoke.once, var.dynamic.attachment)
+#'result <- LAMP.Type$setDynamicAttachment(var.type.id, 
+#'                                         var.target, 
+#'                                         var.attachment.key, 
+#'                                         var.invoke.once, 
+#'                                         var.dynamic.attachment)
 #'
 #'
 #' }

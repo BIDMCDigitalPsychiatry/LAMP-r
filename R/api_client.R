@@ -87,6 +87,7 @@ ApiClient  <- R6::R6Class(
         self$timeout <- timeout
       }
     },
+    
     CallApi = function(url, method, queryParams, headerParams, body, ...){
       headers <- httr::add_headers(c(headerParams, self$defaultHeaders))
 

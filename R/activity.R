@@ -17,9 +17,6 @@
 #'
 #' @field schedule  \link{DurationIntervalLegacy} [optional]
 #'
-#' @field settings  \link{object} [optional]
-#'
-#'
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
