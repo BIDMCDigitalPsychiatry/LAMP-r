@@ -18,12 +18,6 @@ ActivitySpec Class
 \item{\code{help_contents}}{character [optional]}
 
 \item{\code{script_contents}}{character [optional]}
-
-\item{\code{static_data_schema}}{\link{object} [optional]}
-
-\item{\code{temporal_event_schema}}{\link{object} [optional]}
-
-\item{\code{settings_schema}}{\link{object} [optional]}
 }
 \if{html}{\out{</div>}}
 }

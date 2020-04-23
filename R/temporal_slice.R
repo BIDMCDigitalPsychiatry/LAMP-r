@@ -9,9 +9,6 @@
 #' @title TemporalSlice
 #' @description TemporalSlice Class
 #' @format An \code{R6Class} generator object
-#' @field item  \link{object} [optional]
-#'
-#' @field value  \link{object} [optional]
 #'
 #' @field type  character [optional]
 #'

@@ -20,8 +20,6 @@ Activity Class
 \item{\code{name}}{character [optional]}
 
 \item{\code{schedule}}{\link{DurationIntervalLegacy} [optional]}
-
-\item{\code{settings}}{\link{object} [optional]}
 }
 \if{html}{\out{</div>}}
 }

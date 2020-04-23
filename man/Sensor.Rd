@@ -18,8 +18,6 @@ Sensor Class
 \item{\code{spec}}{character [optional]}
 
 \item{\code{name}}{character [optional]}
-
-\item{\code{settings}}{\link{object} [optional]}
 }
 \if{html}{\out{</div>}}
 }

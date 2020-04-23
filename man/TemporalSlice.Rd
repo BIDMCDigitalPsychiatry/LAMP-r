@@ -13,10 +13,6 @@ TemporalSlice Class
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{item}}{\link{object} [optional]}
-
-\item{\code{value}}{\link{object} [optional]}
-
 \item{\code{type}}{character [optional]}
 
 \item{\code{duration}}{integer [optional]}

@@ -11,9 +11,6 @@
 #' @format An \code{R6Class} generator object
 #' @field name  character [optional]
 #'
-#' @field settings_schema  \link{object} [optional]
-#'
-#'
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export

@@ -15,13 +15,6 @@
 #'
 #' @field script_contents  character [optional]
 #'
-#' @field static_data_schema  \link{object} [optional]
-#'
-#' @field temporal_event_schema  \link{object} [optional]
-#'
-#' @field settings_schema  \link{object} [optional]
-#'
-#'
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export

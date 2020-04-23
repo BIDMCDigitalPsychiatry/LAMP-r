@@ -14,8 +14,6 @@ SensorSpec Class
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
 \item{\code{name}}{character [optional]}
-
-\item{\code{settings_schema}}{\link{object} [optional]}
 }
 \if{html}{\out{</div>}}
 }

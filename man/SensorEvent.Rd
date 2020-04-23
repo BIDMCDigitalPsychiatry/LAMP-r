@@ -16,8 +16,6 @@ SensorEvent Class
 \item{\code{timestamp}}{numeric [optional]}
 
 \item{\code{sensor}}{character [optional]}
-
-\item{\code{data}}{\link{object} [optional]}
 }
 \if{html}{\out{</div>}}
 }

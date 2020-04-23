@@ -19,8 +19,6 @@ ActivityEvent Class
 
 \item{\code{activity}}{character [optional]}
 
-\item{\code{data}}{\link{object} [optional]}
-
 \item{\code{temporal_slices}}{list( object ) [optional]}
 }
 \if{html}{\out{</div>}}

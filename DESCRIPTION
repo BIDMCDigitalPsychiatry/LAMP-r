@@ -1,13 +1,22 @@
+Type: Package
 Package: LAMP
 Title: API Client for LAMP Platform
-Version: 1.0.0
-Authors@R: person("Division of Digital Psychiatry at Beth Israel Deaconess Medical Center.", email = "team@digitalpsych.org", role = c("aut", "cre"))
-Description: The LAMP Platform API.
-URL: https:////
-BugReports: https://///issues
+Version: 1.0.1
+Authors@R: c(person("Phil",
+                    "Henson",
+                    role = c("aut", "cre"),
+                    email = "phenson@bidmc.harvard.edu"),
+             person("Aditya",
+                    "Vaidyam",
+                    role = c("aut")),
+             person("Division of Digital Psychiatry at Beth Israel Deaconess Medical Center", 
+                    role = c("cph")))
+Description: An interface for connecting with the LAMP Platform API.
+URL: https://github.com/BIDMCDigitalPsychiatry/LAMP-r
+BugReports: https://github.com/BIDMCDigitalPsychiatry/LAMP-r/issues
 Depends: R (>= 3.3)
 Encoding: UTF-8
-License: Unlicense
+License: MIT + file LICENSE
 LazyData: true
 Suggests: testthat
 Imports: jsonlite, httr, R6, caTools
